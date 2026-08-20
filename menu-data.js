@@ -505,6 +505,8 @@ const DS_CART = {
 
 // Global Listeners for instant Cart Badge synchronization
 if (typeof window !== 'undefined') {
+  window.DS_MENU = DS_MENU;
+  window.DS_CART = DS_CART;
   window.addEventListener('storage', () => DS_CART.updateBadge());
   window.addEventListener('cart-updated', () => DS_CART.updateBadge());
   document.addEventListener('DOMContentLoaded', () => DS_CART.updateBadge());
