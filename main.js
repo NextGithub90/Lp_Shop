@@ -1,4 +1,4 @@
-﻿// ===== DAPUR SULTAN – main.js =====
+// ===== DAPUR SULTAN – main.js =====
 
 // ===== OPEN WHATSAPP =====
 function openWA(menu) {
@@ -57,15 +57,17 @@ function slidePromo(dir) {
 function animateCounters() {
   const nums = document.querySelectorAll('.stat-num[data-target]');
   nums.forEach(el => {
-    const target = parseInt(el.dataset.target);
+    const raw = el.dataset.target;
+    const isDecimal = raw.includes('.');
+    const target = parseFloat(raw);
     const duration = 1800;
     const step = target / (duration / 16);
     let current = 0;
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
-      el.textContent = Math.floor(current);
+      el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
       if (current >= target) {
-        el.textContent = target;
+        el.textContent = isDecimal ? target.toFixed(1) : target;
         clearInterval(timer);
       }
     }, 16);
@@ -140,14 +142,6 @@ if (searchInput) {
   });
 }
 
-// ===== DUPLICATE FOOD CAROUSEL for infinite scroll =====
-(function() {
-  const track = document.getElementById('carousel-track');
-  if (!track) return;
-  const original = track.innerHTML;
-  track.innerHTML = original + original; // Duplicate for seamless loop
-})();
-
 // ===== SCROLL TO TOP on logo click =====
 const logo = document.getElementById('site-logo');
 if (logo) {
@@ -216,15 +210,21 @@ document.querySelectorAll('.menu-ayam-section, .testimoni-section').forEach(el =
   observer.observe(el);
 });
 
-// ===== FOOD STRIP AUTO SCROLL =====
+// ===== FOOD STRIP SMOOTH SEAMLESS MARQUEE =====
 (function() {
   const track = document.getElementById('food-strip-track');
   if (!track) return;
-  track.innerHTML = track.innerHTML + track.innerHTML; // duplicate
-  let scrollPos = 0;
-  setInterval(() => {
-    scrollPos += 1;
-    if (scrollPos >= track.scrollWidth / 2) scrollPos = 0;
-    track.scrollLeft = scrollPos;
-  }, 25);
+  
+  // Duplicate elements once for seamless infinite CSS loop
+  track.innerHTML = track.innerHTML + track.innerHTML;
+
+  // Touch control for mobile: pause on touch, resume on release
+  track.addEventListener('touchstart', () => {
+    track.style.animationPlayState = 'paused';
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    track.style.animationPlayState = 'running';
+  }, { passive: true });
 })();
+

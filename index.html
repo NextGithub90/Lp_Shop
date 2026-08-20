@@ -1,267 +1,701 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Dapur Sultan - Selera Para Raja | Katering Premium</title>
-  <meta name="description" content="Dapur Sultan - Katering premium dengan cita rasa terbaik untuk arisan, syukuran, ulang tahun, meeting kantor dan acara spesial. Pesan sekarang via WhatsApp!" />
+  <meta name="description"
+    content="Dapur Sultan - Katering premium dengan cita rasa terbaik untuk arisan, syukuran, ulang tahun, meeting kantor dan acara spesial. Pesan sekarang via WhatsApp!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="announcement-bar" id="ann-bar">
-  Promo Akhir Bulan! Pesan min. 30 pax gratis minuman. Hubungi CS sekarang!
-  <button class="ann-close" onclick="document.getElementById('ann-bar').style.display='none'" aria-label="Tutup">X</button>
-</div>
-<div class="page-wrapper">
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <img src="img/logo.png" alt="Dapur Sultan Logo" class="site-logo" id="site-logo" />
-    </div>
-    <div class="hero-food-strip" id="hero-food-strip">
-      <div class="food-strip-track" id="food-strip-track">
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/ayam_Goreng.png')"></div><span class="food-label">Ayam Goreng</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/ayamBakar_rempah.png')"></div><span class="food-label">Ayam Bakar Rempah</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/ayamGoreng_lengkuas.png')"></div><span class="food-label">Ayam Goreng Lengkuas</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/sultan_penyet.png')"></div><span class="food-label">Sultan Penyet</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/ayam_Keprek.png')"></div><span class="food-label">Ayam Geprek</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/keprek_istimewa.png')"></div><span class="food-label">Geprek Istimewa</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/rempah_istimewa.png')"></div><span class="food-label">Rempah Istimewa</span></div>
-        <div class="food-card"><div class="food-img food-img-real" style="background-image:url('img/sultan_lengkuas.png')"></div><span class="food-label">Sultan Lengkuas</span></div>
+  <div class="announcement-bar" id="ann-bar">
+    Promo Akhir Bulan! Pesan min. 30 pax gratis minuman. Hubungi CS sekarang!
+    <button class="ann-close" onclick="document.getElementById('ann-bar').style.display='none'"
+      aria-label="Tutup">X</button>
+  </div>
+  <div class="page-wrapper">
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <img src="img/logo.webp" alt="Dapur Sultan Logo" class="site-logo" id="site-logo" />
       </div>
-    </div>
-    <div class="hero-cta">
-      <div class="hero-badge"><span>&#128081;</span><span>Selera Para Raja</span></div>
-      <h1 class="hero-title">Hidangan Lezat<br/>untuk Setiap Momen</h1>
-      <p class="hero-sub">Katering premium untuk arisan, syukuran, ulang tahun, meeting kantor &amp; acara spesial lainnya.</p>
-      <div class="hero-search-wrap">
-        <div class="search-label">&#128269; Cari menu yang kamu inginkan</div>
-        <input type="text" class="hero-search" id="hero-search" placeholder="Ketik nama menu, jenis hidangan, atau acara..." />
-      </div>
-      <p class="hero-cta-text">Mau lihat semua menu?</p>
-      <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20melihat%20daftar%20menu" class="btn-primary" id="btn-lihat-menu" target="_blank" rel="noopener">Lihat Daftar Menu</a>
-    </div>
-  </header>
-  <section class="promo-section" id="promo-section">
-    <div class="section-header-dark"><h2 class="section-title-light">&#128293; Paket Spesial</h2></div>
-    <div class="promo-slider" id="promo-slider">
-      <div class="promo-track" id="promo-track">
-        <div class="promo-card" onclick="openWA('Paket Arisan Sultan')">
-          <div class="promo-img-wrap"><div class="promo-img promo-img-real" style="background-image:url('img/promo_arisan.jpg')"></div><span class="promo-badge">HEMAT</span></div>
-          <div class="promo-info"><span class="promo-tag-new">&#128306; Baru</span><h3 class="promo-name">Paket Arisan Sultan</h3><p class="promo-desc">Nasi Box lengkap + Kudapan untuk 20 pax. Cocok untuk arisan &amp; syukuran keluarga</p><p class="promo-price">Hubungi CS &#128242;</p></div>
-        </div>
-        <div class="promo-card" onclick="openWA('Tumpeng Nasi Kuning')">
-          <div class="promo-img-wrap"><div class="promo-img promo-img-real" style="background-image:url('img/promo_tumpeng.jpg')"></div><span class="promo-badge promo-badge-gold">ANDALAN</span></div>
-          <div class="promo-info"><span class="promo-tag-new">&#128306; Baru</span><h3 class="promo-name">Tumpeng Nasi Kuning</h3><p class="promo-desc">Tumpeng lengkap dengan lauk pilihan. Cocok untuk ulang tahun &amp; syukuran keluarga</p><p class="promo-price">Hubungi CS &#128242;</p></div>
-        </div>
-        <div class="promo-card" onclick="openWA('Paket Meeting Kantor')">
-          <div class="promo-img-wrap"><div class="promo-img promo-img-real" style="background-image:url('img/promo_meeting.jpg')"></div><span class="promo-badge promo-badge-brown">POPULER</span></div>
-          <div class="promo-info"><span class="promo-tag-promo">&#128293; Promo</span><h3 class="promo-name">Paket Meeting Kantor</h3><p class="promo-desc">Nasi Box + Snack + Minuman. Tersedia untuk meeting dari 10 pax ke atas</p><p class="promo-price">Hubungi CS &#128242;</p></div>
-        </div>
-      </div>
-      <button class="slider-btn slider-prev" onclick="slidePromo(-1)">&lt;</button>
-      <button class="slider-btn slider-next" onclick="slidePromo(1)">&gt;</button>
-    </div>
-  </section>
-
-  <section class="kategori-section" id="kategori-section">
-    <div class="section-header-light"><h2 class="section-title-dark">Menu Andalan Kami</h2><p class="section-sub">Beragam pilihan hidangan untuk setiap momen spesialmu</p></div>
-    <div class="kategori-grid">
-      <a href="#" class="kat-item" onclick="openWA('Nasi Box')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#b5451b22,#f5a62322)"><span class="kat-emoji">&#127857;</span></div><span class="kat-name">Nasi Box</span><span class="kat-count">10+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Tumpeng')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#DAA52022,#F5C84222)"><span class="kat-emoji">&#127956;&#65039;</span></div><span class="kat-name">Tumpeng</span><span class="kat-count">5+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Nasi Kuning')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#F39C1222,#F5C84222)"><span class="kat-emoji">&#11088;</span></div><span class="kat-name">Nasi Kuning</span><span class="kat-count">3+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Rendang')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#7B3A1022,#C0392B22)"><span class="kat-emoji">&#129385;</span></div><span class="kat-name">Rendang</span><span class="kat-count">4+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Kudapan')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#5D403722,#FFCCBC22)"><span class="kat-emoji">&#129382;</span></div><span class="kat-name">Kudapan</span><span class="kat-count">8+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Sayur dan Lauk')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#196F3D22,#A9DFBF22)"><span class="kat-emoji">&#129382;</span></div><span class="kat-name">Sayur &amp; Lauk</span><span class="kat-count">12+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Ayam Goreng')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#C0392B22,#F39C1222)"><span class="kat-emoji">&#127831;</span></div><span class="kat-name">Ayam &amp; Lauk</span><span class="kat-count">6+ Pilihan</span></a>
-      <a href="#" class="kat-item" onclick="openWA('Hampers')"><div class="kat-icon-wrap" style="background:linear-gradient(135deg,#88027722,#F8BBD922)"><span class="kat-emoji">&#127873;</span></div><span class="kat-name">Hampers</span><span class="kat-count">5+ Pilihan</span></a>
-    </div>
-  </section>
-  <section class="menu-ayam-section" id="menu-ayam-section">
-    <div class="section-header-dark">
-      <h2 class="section-title-light">&#127831; Menu Ayam Unggulan</h2>
-      <p class="section-sub-light">Dimasak dengan rempah pilihan, lezat &amp; menggugah selera</p>
-    </div>
-    <div class="menu-ayam-grid" id="menu-ayam-grid">
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/ayam_Goreng.png" alt="Ayam Goreng Spesial" loading="lazy" /><span class="menu-card-badge">Bestseller</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Ayam Goreng Spesial</h3><p class="menu-card-desc">Ayam goreng crispy rempah dengan bumbu rahasia khas Dapur Sultan</p><button class="menu-card-btn" onclick="openWA('Ayam Goreng Spesial')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/ayamBakar_rempah.png" alt="Ayam Bakar Rempah" loading="lazy" /><span class="menu-card-badge menu-card-badge-gold">Favorit</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Ayam Bakar Rempah</h3><p class="menu-card-desc">Ayam bakar bumbu rempah khas Nusantara, aroma harum &amp; rasa kaya</p><button class="menu-card-btn" onclick="openWA('Ayam Bakar Rempah')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/ayamGoreng_lengkuas.png" alt="Ayam Goreng Lengkuas" loading="lazy" /><span class="menu-card-badge">Baru</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Ayam Goreng Lengkuas</h3><p class="menu-card-desc">Ayam goreng dengan marinasi lengkuas segar, renyah &amp; gurih sempurna</p><button class="menu-card-btn" onclick="openWA('Ayam Goreng Lengkuas')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/sultan_penyet.png" alt="Sultan Penyet" loading="lazy" /><span class="menu-card-badge menu-card-badge-gold">Andalan</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Sultan Penyet</h3><p class="menu-card-desc">Ayam penyet dengan sambal bawang super pedas khas Sultan, menggoda selera</p><button class="menu-card-btn" onclick="openWA('Sultan Penyet')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/ayam_Keprek.png" alt="Ayam Geprek" loading="lazy" /></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Ayam Geprek</h3><p class="menu-card-desc">Ayam crispy geprek dengan sambal merah pilihan, level pedas bisa disesuaikan</p><button class="menu-card-btn" onclick="openWA('Ayam Geprek')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/keprek_istimewa.png" alt="Geprek Istimewa" loading="lazy" /></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Geprek Istimewa</h3><p class="menu-card-desc">Geprek level sultan dengan topping keju, saus spesial &amp; lalapan segar</p><button class="menu-card-btn" onclick="openWA('Geprek Istimewa')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/rempah_istimewa.png" alt="Rempah Istimewa" loading="lazy" /><span class="menu-card-badge">Premium</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Rempah Istimewa</h3><p class="menu-card-desc">Ayam dengan bumbu rempah komplit, dimasak slow-cook untuk cita rasa terbaik</p><button class="menu-card-btn" onclick="openWA('Rempah Istimewa')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/sultan_lengkuas.png" alt="Sultan Lengkuas" loading="lazy" /><span class="menu-card-badge menu-card-badge-gold">Sultan</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Sultan Lengkuas</h3><p class="menu-card-desc">Varian premium ayam lengkuas dengan teknik marinasi 24 jam, rasa luar biasa</p><button class="menu-card-btn" onclick="openWA('Sultan Lengkuas')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/rempah_juara.png" alt="Rempah Juara" loading="lazy" /></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Rempah Juara</h3><p class="menu-card-desc">Perpaduan rempah pilihan dari Nusantara untuk sajian yang tak terlupakan</p><button class="menu-card-btn" onclick="openWA('Rempah Juara')">Pesan Sekarang</button></div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-card-img"><img src="img/Lengkuas_Juara.png" alt="Lengkuas Juara" loading="lazy" /><span class="menu-card-badge">Terlaris</span></div>
-        <div class="menu-card-info"><h3 class="menu-card-name">Lengkuas Juara</h3><p class="menu-card-desc">Juara rasa dengan bumbu lengkuas berlapis, sempurna untuk acara besar</p><button class="menu-card-btn" onclick="openWA('Lengkuas Juara')">Pesan Sekarang</button></div>
-      </div>
-    </div>
-    <div class="menu-ayam-cta">
-      <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20lihat%20menu%20lengkap" class="btn-secondary" target="_blank" rel="noopener">&#128203; Lihat Semua Menu</a>
-    </div>
-  </section>
-  <section class="kualitas-section" id="kualitas-section">
-    <div class="section-header-light"><h2 class="section-title-dark">Kualitas &amp; Kebersihan<br/>adalah Standar Kami</h2><p class="section-sub">Dapur Sultan berkomitmen menjaga kualitas terbaik di setiap sajian</p></div>
-    <div class="kualitas-badges">
-      <div class="qual-badge"><div class="qual-icon">&#9989;</div><span>Halal</span></div>
-      <div class="qual-badge"><div class="qual-icon">&#127941;</div><span>Laik Hygiene</span></div>
-      <div class="qual-badge"><div class="qual-icon">&#127807;</div><span>Bahan Segar</span></div>
-    </div>
-    <div class="kualitas-photos">
-      <div class="qual-photo-card"><div class="qual-photo qual-photo-real" style="background-image:url('img/qual_pengemasan.jpg')"></div><span class="qual-photo-label">Pengemasan Rapi &amp; Bersih</span></div>
-      <div class="qual-photo-card"><div class="qual-photo qual-photo-real" style="background-image:url('img/qual_chef.jpg')"></div><span class="qual-photo-label">Tim Juru Masak Profesional</span></div>
-      <div class="qual-photo-card"><div class="qual-photo qual-photo-real" style="background-image:url('img/qual_admin.jpg')"></div><span class="qual-photo-label">Admin Fast Response</span></div>
-    </div>
-  </section>
-
-  <section class="stats-section" id="stats-section">
-    <div class="stats-header"><div class="ornament-line"></div><h2 class="stats-title">Komitmen Dapur Sultan Untukmu</h2><div class="ornament-line"></div></div>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-icon">&#127869;&#65039;</div><div class="stat-num" data-target="500">0</div><div class="stat-unit">Porsi+</div><div class="stat-label">Porsi terkirim setiap bulan</div></div>
-      <div class="stat-card"><div class="stat-icon">&#11088;</div><div class="stat-num" data-target="4.9">0</div><div class="stat-unit">/ 5.0</div><div class="stat-label">Rating kepuasan pelanggan</div></div>
-      <div class="stat-card"><div class="stat-icon">&#128197;</div><div class="stat-num" data-target="3">0</div><div class="stat-unit">Tahun+</div><div class="stat-label">Pengalaman melayani acara</div></div>
-      <div class="stat-card"><div class="stat-icon">&#127881;</div><div class="stat-num" data-target="200">0</div><div class="stat-unit">Acara+</div><div class="stat-label">Acara sukses tersajikan</div></div>
-    </div>
-  </section>
-
-  <section class="testimoni-section" id="testimoni-section">
-    <div class="section-header-light">
-      <h2 class="section-title-dark">Apa Kata Mereka?</h2>
-      <p class="section-sub">Ribuan pelanggan puas dengan layanan Dapur Sultan</p>
-    </div>
-    <div class="testi-slider" id="testi-slider">
-      <div class="testi-track" id="testi-track">
-        <div class="testi-card" id="testi-1">
-          <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testi-text">"Makanannya enak banget! Arisan keluarga kami jadi lebih berkesan. Pengemasan rapi, tepat waktu, dan responsif. Pasti pesan lagi untuk syukuran bulan depan!"</p>
-          <div class="testi-user">
-            <img src="img/testi_1.jpg" alt="Ibu Ratna" class="testi-avatar" />
-            <div class="testi-user-info"><span class="testi-name">Ibu Ratna Dewi</span><span class="testi-role">Pelanggan Arisan, Jakarta Selatan</span></div>
+      <div class="hero-food-strip" id="hero-food-strip">
+        <div class="food-strip-track" id="food-strip-track">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=1'" role="button" tabindex="0" title="Detail Nasi Box Ayam Goreng">
+            <div class="food-img food-img-real" style="background-image:url('img/ayam_Goreng.webp')"></div>
+            <span class="food-label">Ayam Goreng</span>
           </div>
-        </div>
-        <div class="testi-card" id="testi-2">
-          <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testi-text">"Pesan untuk meeting kantor 50 orang. Kualitas luar biasa, nasi boxnya lengkap dan variatif. Admin sangat responsif dan profesional. Recommended banget buat acara korporat!"</p>
-          <div class="testi-user">
-            <img src="img/testi_2.jpg" alt="Pak Hendra" class="testi-avatar" />
-            <div class="testi-user-info"><span class="testi-name">Bapak Hendra Gunawan</span><span class="testi-role">Manager HRD, Tangerang</span></div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=2'" role="button" tabindex="0" title="Detail Ayam Bakar Rempah">
+            <div class="food-img food-img-real" style="background-image:url('img/ayamBakar_rempah.webp')"></div>
+            <span class="food-label">Ayam Bakar</span>
           </div>
-        </div>
-        <div class="testi-card" id="testi-3">
-          <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-          <p class="testi-text">"Tumpeng untuk ulang tahun mama sangat cantik dan rasanya juara! Semua tamu nanya katering mana. Harga terjangkau untuk kualitas premium. Terima kasih Dapur Sultan!"</p>
-          <div class="testi-user">
-            <img src="img/testi_3.jpg" alt="Mbak Dina" class="testi-avatar" />
-            <div class="testi-user-info"><span class="testi-name">Dina Pratiwi</span><span class="testi-role">Pelanggan Setia, Bekasi</span></div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0" title="Detail Ayam Goreng Lengkuas">
+            <div class="food-img food-img-real" style="background-image:url('img/ayamGoreng_lengkuas.webp')"></div>
+            <span class="food-label">Lengkuas</span>
+          </div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=6'" role="button" tabindex="0" title="Detail Sultan Penyet">
+            <div class="food-img food-img-real" style="background-image:url('img/sultan_penyet.webp')"></div>
+            <span class="food-label">Sultan Penyet</span>
+          </div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0" title="Detail Ayam Geprek">
+            <div class="food-img food-img-real" style="background-image:url('img/ayam_Keprek.webp')"></div>
+            <span class="food-label">Ayam Geprek</span>
+          </div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0" title="Detail Geprek Istimewa">
+            <div class="food-img food-img-real" style="background-image:url('img/keprek_istimewa.webp')"></div>
+            <span class="food-label">Geprek Spesial</span>
+          </div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=5'" role="button" tabindex="0" title="Detail Rempah Istimewa">
+            <div class="food-img food-img-real" style="background-image:url('img/rempah_istimewa.webp')"></div>
+            <span class="food-label">Rempah Juara</span>
+          </div>
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0" title="Detail Sultan Lengkuas">
+            <div class="food-img food-img-real" style="background-image:url('img/sultan_lengkuas.webp')"></div>
+            <span class="food-label">Sultan Lengkuas</span>
           </div>
         </div>
       </div>
-      <div class="testi-dots" id="testi-dots">
-        <button class="testi-dot active" onclick="goTesti(0)"></button>
-        <button class="testi-dot" onclick="goTesti(1)"></button>
-        <button class="testi-dot" onclick="goTesti(2)"></button>
+      <div class="hero-cta">
+        <h1 class="hero-title">Hidangan Lezat<br />untuk Setiap Momen</h1>
+        <p class="hero-sub">Katering premium untuk arisan, syukuran, ulang tahun, meeting kantor &amp; acara spesial
+          lainnya.</p>
+        <div class="hero-search-wrap">
+          <div class="search-label">&#128269; Cari menu yang kamu inginkan</div>
+          <input type="text" class="hero-search" id="hero-search"
+            placeholder="Ketik nama menu, jenis hidangan, atau acara..." />
+        </div>
+        <p class="hero-cta-text">Mau lihat semua menu?</p>
+        <a href="daftar-menu.html"
+          class="btn-primary" id="btn-lihat-menu">Lihat Daftar Menu</a>
       </div>
-    </div>
-  </section>
-  <section class="contact-section" id="contact-section">
-    <div class="section-header-dark"><h2 class="section-title-light">&#128222; Hubungi Kami</h2><p class="section-sub-light">Tim kami siap membantu 7 hari seminggu, pukul 07.00-21.00 WIB</p></div>
-    <div class="contact-cards">
-      <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20pesan%20katering" class="contact-card" id="contact-wa1" target="_blank" rel="noopener">
-        <div class="contact-card-icon wa-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-        <div class="contact-card-info"><span class="contact-card-label">CS 1 - Admin Utama</span><span class="contact-card-num">0813-8003-3670</span><span class="contact-card-status">&#127956; Online Sekarang</span></div>
-        <span class="contact-card-arrow">&#8250;</span>
+    </header>
+
+
+    <section class="kategori-section" id="kategori-section">
+      <div class="section-header-light">
+        <h2 class="section-title-dark">Menu Andalan Kami</h2>
+        <p class="section-sub">Beragam pilihan hidangan untuk setiap momen spesialmu</p>
+      </div>
+      <div class="kategori-grid">
+        <a href="daftar-menu.html?cat=nasi-box" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_nasi_box.webp" alt="Kategori Nasi Box" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Nasi Box</span>
+          <span class="kat-count">20 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=hantaran" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_hantaran.webp" alt="Kategori Hantaran" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Hantaran</span>
+          <span class="kat-count">9 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=paket-luxury" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_paket_luxury.webp" alt="Kategori Paket Luxury" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Paket Luxury</span>
+          <span class="kat-count">6 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=tumpeng-mini" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_tumpeng_mini.webp" alt="Kategori Tumpeng Mini" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Tumpeng Mini</span>
+          <span class="kat-count">5 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=nasi-besek" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_nasi_besek.webp" alt="Kategori Nasi Besek" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Nasi Besek</span>
+          <span class="kat-count">8 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=kudapan" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_kudapan.webp" alt="Kategori Kudapan" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Kudapan</span>
+          <span class="kat-count">12 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=dimsum" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_dimsum.webp" alt="Kategori Dimsum" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Dimsum</span>
+          <span class="kat-count">10 Pilihan</span>
+        </a>
+        <a href="daftar-menu.html?cat=hampers" class="kat-item">
+          <div class="kat-img-wrap">
+            <img src="img/cat_hampers.webp" alt="Kategori Hampers" class="kat-img" loading="lazy" />
+          </div>
+          <span class="kat-name">Hampers</span>
+          <span class="kat-count">15 Pilihan</span>
+        </a>
+      </div>
+    </section>
+    <section class="menu-ayam-section" id="menu-ayam-section">
+      <div class="section-header-dark">
+        <h2 class="section-title-light">&#127831; Menu Ayam Unggulan</h2>
+        <p class="section-sub-light">Dimasak dengan rempah pilihan, lezat &amp; menggugah selera</p>
+      </div>
+      <div class="menu-ayam-grid" id="menu-ayam-grid">
+        <!-- Card 1: Ayam Goreng Sultan -->
+        <div class="menu-card">
+          <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=1'">
+            <img src="img/ayam_Goreng.webp" alt="Nasi Box Sultan Premium" loading="lazy" />
+            <span class="menu-card-badge">â˜… Terlaris</span>
+          </div>
+          <div class="menu-card-info">
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=1'">Nasi Box Sultan Premium</h3>
+            <p class="menu-card-desc">Ayam goreng crispy rempah + tempe orek + lalapan + sambal.</p>
+            <div class="menu-card-price-row">
+              <span class="menu-card-price">Rp 35.000</span>
+              <span class="menu-card-price-unit"> / porsi</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-card-keranjang" onclick="addHomeCart(1, 10, 'Nasi Box Sultan Premium')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                Keranjang
+              </button>
+              <a href="detail-produk.html?id=1" class="btn-card-beli">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Ayam Bakar Rempah -->
+        <div class="menu-card">
+          <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=2'">
+            <img src="img/ayamBakar_rempah.webp" alt="Nasi Box Ayam Bakar Rempah" loading="lazy" />
+            <span class="menu-card-badge">Hemat 16%</span>
+          </div>
+          <div class="menu-card-info">
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=2'">Nasi Box Ayam Bakar Rempah</h3>
+            <p class="menu-card-desc">Ayam bakar bumbu 12 rempah pilihan + nasi pulen + sambal hijau.</p>
+            <div class="menu-card-price-row">
+              <span class="menu-card-price">Rp 38.000</span>
+              <span class="menu-card-price-unit"> / porsi</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-card-keranjang" onclick="addHomeCart(2, 10, 'Nasi Box Ayam Bakar Rempah')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                Keranjang
+              </button>
+              <a href="detail-produk.html?id=2" class="btn-card-beli">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Ayam Goreng Lengkuas -->
+        <div class="menu-card">
+          <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=4'">
+            <img src="img/ayamGoreng_lengkuas.webp" alt="Nasi Box Lengkuas Juara" loading="lazy" />
+            <span class="menu-card-badge">Hemat 12%</span>
+          </div>
+          <div class="menu-card-info">
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=4'">Nasi Box Lengkuas Juara</h3>
+            <p class="menu-card-desc">Ayam goreng taburan lengkuas gurih renyah dengan sambal spesial.</p>
+            <div class="menu-card-price-row">
+              <span class="menu-card-price">Rp 37.000</span>
+              <span class="menu-card-price-unit"> / porsi</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-card-keranjang" onclick="addHomeCart(4, 10, 'Nasi Box Lengkuas Juara')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                Keranjang
+              </button>
+              <a href="detail-produk.html?id=4" class="btn-card-beli">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Sultan Penyet -->
+        <div class="menu-card">
+          <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=6'">
+            <img src="img/sultan_penyet.webp" alt="Nasi Box Sultan Penyet" loading="lazy" />
+            <span class="menu-card-badge">Hemat 14%</span>
+          </div>
+          <div class="menu-card-info">
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=6'">Nasi Box Sultan Penyet</h3>
+            <p class="menu-card-desc">Ayam penyet dengan sambal bawang super pedas khas Sultan komplit.</p>
+            <div class="menu-card-price-row">
+              <span class="menu-card-price">Rp 36.000</span>
+              <span class="menu-card-price-unit"> / porsi</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-card-keranjang" onclick="addHomeCart(6, 10, 'Nasi Box Sultan Penyet')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                Keranjang
+              </button>
+              <a href="detail-produk.html?id=6" class="btn-card-beli">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-ayam-cta">
+        <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20lihat%20menu%20lengkap"
+          class="btn-secondary" target="_blank" rel="noopener">&#128203; Lihat Semua Menu</a>
+      </div>
+    </section>
+    <section class="kualitas-section" id="kualitas-section">
+      <div class="section-header-light">
+        <h2 class="section-title-dark">Kualitas &amp; Kebersihan<br />adalah Standar Kami</h2>
+        <p class="section-sub">Dapur Sultan berkomitmen menjaga kualitas terbaik di setiap sajian</p>
+      </div>
+      <div class="kualitas-badges">
+        <div class="qual-badge">
+          <div class="qual-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" class="qual-svg">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <span>100% Halal</span>
+        </div>
+        <div class="qual-badge">
+          <div class="qual-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" class="qual-svg">
+              <circle cx="12" cy="8" r="6" />
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+            </svg>
+          </div>
+          <span>Laik Higiene</span>
+        </div>
+        <div class="qual-badge">
+          <div class="qual-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" class="qual-svg">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+          </div>
+          <span>Bahan Segar</span>
+        </div>
+      </div>
+      <div class="kualitas-photos">
+        <div class="qual-photo-card">
+          <div class="qual-photo qual-photo-real" style="background-image:url('img/qual_pengemasan.webp')"></div><span
+            class="qual-photo-label">Pengemasan Rapi &amp; Bersih</span>
+        </div>
+        <div class="qual-photo-card">
+          <div class="qual-photo qual-photo-real" style="background-image:url('img/qual_chef.webp')"></div><span
+            class="qual-photo-label">Tim Juru Masak Profesional</span>
+        </div>
+        <div class="qual-photo-card">
+          <div class="qual-photo qual-photo-real" style="background-image:url('img/qual_admin.webp')"></div><span
+            class="qual-photo-label">Admin Fast Response</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section" id="stats-section">
+      <div class="stats-header">
+        <div class="ornament-line"></div>
+        <h2 class="stats-title">Komitmen &amp; Pencapaian Kami</h2>
+        <div class="ornament-line"></div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="stat-svg">
+              <path
+                d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+              <line x1="6" y1="17" x2="18" y2="17" />
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
+          </div>
+          <div class="stat-unit">Porsi / Bulan</div>
+          <div class="stat-label">Tersajikan segar tepat waktu</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="stat-svg">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-num" data-target="4.9">0</span><span class="stat-plus">/5.0</span>
+          </div>
+          <div class="stat-unit">Rating Kepuasan</div>
+          <div class="stat-label">Berdasarkan ulasan pelanggan</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="stat-svg">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          </div>
+          <div class="stat-unit">Tahun Pengalaman</div>
+          <div class="stat-label">Melayani berbagai acara</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" class="stat-svg">
+              <path d="M12 2v20" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-num" data-target="200">0</span><span class="stat-plus">+</span>
+          </div>
+          <div class="stat-unit">Acara Sukses</div>
+          <div class="stat-label">Arisan, kantor &amp; syukuran</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimoni-section" id="testimoni-section">
+      <div class="section-header-light">
+        <h2 class="section-title-dark">Apa Kata Mereka?</h2>
+        <p class="section-sub">Ribuan pelanggan puas dengan layanan Dapur Sultan</p>
+      </div>
+      <div class="testi-slider" id="testi-slider">
+        <div class="testi-track" id="testi-track">
+          <div class="testi-card" id="testi-1">
+            <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p class="testi-text">"Makanannya enak banget! Arisan keluarga kami jadi lebih berkesan. Pengemasan rapi,
+              tepat waktu, dan responsif. Pasti pesan lagi untuk syukuran bulan depan!"</p>
+            <div class="testi-user">
+              <img src="img/testi_1.webp" alt="Ibu Ratna" class="testi-avatar" />
+              <div class="testi-user-info"><span class="testi-name">Ibu Ratna Dewi</span><span
+                  class="testi-role">Pelanggan Arisan, Jakarta Selatan</span></div>
+            </div>
+          </div>
+          <div class="testi-card" id="testi-2">
+            <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p class="testi-text">"Pesan untuk meeting kantor 50 orang. Kualitas luar biasa, nasi boxnya lengkap dan
+              variatif. Admin sangat responsif dan profesional. Recommended banget buat acara korporat!"</p>
+            <div class="testi-user">
+              <img src="img/testi_2.webp" alt="Pak Hendra" class="testi-avatar" />
+              <div class="testi-user-info"><span class="testi-name">Bapak Hendra Gunawan</span><span
+                  class="testi-role">Manager HRD, Tangerang</span></div>
+            </div>
+          </div>
+          <div class="testi-card" id="testi-3">
+            <div class="testi-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p class="testi-text">"Tumpeng untuk ulang tahun mama sangat cantik dan rasanya juara! Semua tamu nanya
+              katering mana. Harga terjangkau untuk kualitas premium. Terima kasih Dapur Sultan!"</p>
+            <div class="testi-user">
+              <img src="img/testi_3.webp" alt="Mbak Dina" class="testi-avatar" />
+              <div class="testi-user-info"><span class="testi-name">Dina Pratiwi</span><span
+                  class="testi-role">Pelanggan Setia, Bekasi</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-dots" id="testi-dots">
+          <button class="testi-dot active" onclick="goTesti(0)"></button>
+          <button class="testi-dot" onclick="goTesti(1)"></button>
+          <button class="testi-dot" onclick="goTesti(2)"></button>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section" id="contact-section">
+      <div class="section-header-dark">
+        <h2 class="section-title-light">&#128222; Kontak &amp; Reservasi</h2>
+        <p class="section-sub-light">For reservation or inquiries, please contact us</p>
+      </div>
+      <div class="contact-cards">
+        <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20info%20katering"
+          class="contact-card" id="contact-wa" target="_blank" rel="noopener">
+          <div class="contact-card-icon wa-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </div>
+          <div class="contact-card-info">
+            <span class="contact-card-label">WhatsApp CS</span>
+            <span class="contact-card-num">0813-8003-367</span>
+            <span class="contact-card-status"><span class="status-dot"></span> Online Sekarang</span>
+          </div>
+          <span class="contact-card-arrow">&#8250;</span>
+        </a>
+        <a href="https://instagram.com/dapursultan_official" class="contact-card" id="contact-ig" target="_blank"
+          rel="noopener">
+          <div class="contact-card-icon ig-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" width="28" height="28">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div class="contact-card-info">
+            <span class="contact-card-label">Instagram Official</span>
+            <span class="contact-card-num">@dapursultan_official</span>
+            <span class="contact-card-status">Follow untuk update menu &amp; promo</span>
+          </div>
+          <span class="contact-card-arrow">&#8250;</span>
+        </a>
+        <a href="https://tiktok.com/@dapursultanofficial" class="contact-card" id="contact-tiktok" target="_blank"
+          rel="noopener">
+          <div class="contact-card-icon tiktok-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#FE2C55" transform="translate(0.6, 0.6)"/>
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#25F4EE" transform="translate(-0.6, -0.6)"/>
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="contact-card-info">
+            <span class="contact-card-label">TikTok Official</span>
+            <span class="contact-card-num">@dapursultanofficial</span>
+            <span class="contact-card-status">Video hidangan &amp; proses masak</span>
+          </div>
+          <span class="contact-card-arrow">&#8250;</span>
+        </a>
+      </div>
+
+      <div class="maps-card">
+        <div class="maps-header">
+          <div class="contact-card-icon location-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" width="26" height="26">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="maps-header-info">
+            <span class="maps-badge">Alamat Dapur Utama</span>
+            <h3 class="maps-address-title">Gedung Graha IPPO</h3>
+            <p class="maps-address-text">Jl. Komp. PT. Hade, RT.002/RW.002, Kel. Harapan Baru, Kec. Bekasi Utara, Kota
+              Bks, Jawa Barat 17123</p>
+          </div>
+        </div>
+        <div class="maps-iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3077123496932!2d107.0134602745271!3d-6.223095893764955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698fdddfb1ad2d%3A0xc98a258c789f2a78!2sGRAHA%20IPPO!5e0!3m2!1sid!2sid!4v1787127285716!5m2!1sid!2sid"
+            width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" title="Lokasi Dapur Sultan Graha IPPO"></iframe>
+        </div>
+        <a href="https://maps.google.com/?q=GRAHA+IPPO+Bekasi" class="maps-open-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <polygon points="3 11 22 2 13 21 11 13 3 11" />
+          </svg>
+          Buka Petunjuk Arah di Google Maps
+        </a>
+      </div>
+
+      <div class="contact-info-row">
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="contact-svg">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Melayani area Jabodetabek &amp; sekitarnya</span>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="contact-svg">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Buka setiap hari 07.00 - 21.00 WIB</span>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="contact-svg">
+            <rect x="1" y="3" width="15" height="13" />
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+          <span>Pengiriman aman tepat waktu</span>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="contact-svg">
+            <rect width="20" height="14" x="2" y="5" rx="2" />
+            <line x1="2" x2="22" y1="10" y2="10" />
+          </svg>
+          <span>Transfer, VA, COD tersedia</span>
+        </div>
+      </div>
+    </section>
+    <section class="faq-section" id="faq-section">
+      <div class="section-header-light">
+        <h2 class="section-title-dark">Paling Sering<br />Ditanya Pelanggan</h2>
+      </div>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item" id="faq-1"><button class="faq-q" onclick="toggleFaq(1)"><span>Apa itu Dapur
+              Sultan?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-1" hidden>
+            <p>Dapur Sultan adalah layanan katering yang menyediakan berbagai pilihan hidangan untuk acara kecil maupun
+              besar. Dengan menu yang lezat dan berkualitas, Dapur Sultan cocok untuk arisan, syukuran, ulang tahun,
+              meeting kantor, hingga berbagai acara spesial lainnya.</p>
+            <p>Mau acara lebih praktis tanpa pusing urusan makanan? Serahkan hidangannya kepada Dapur Sultan.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-2"><button class="faq-q" onclick="toggleFaq(2)"><span>Bagaimana cara memesan
+              makanan di Dapur Sultan?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-2" hidden>
+            <p>Pilih menu yang kamu inginkan, tentukan jumlah pesanan dan tanggal acara, lalu hubungi Customer Service
+              Dapur Sultan melalui nomor WhatsApp resmi kami:</p>
+            <div class="faq-wa-links"><a href="https://wa.me/6281380033670" class="faq-wa-btn" target="_blank">WhatsApp
+                CS:
+                0813-8003-367</a></div>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-3"><button class="faq-q" onclick="toggleFaq(3)"><span>Apakah ada minimal pemesanan
+              di Dapur Sultan?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-3" hidden>
+            <p>Ya, Dapur Sultan menerima pemesanan dengan minimal <strong>10 pax</strong>. Jumlah tersebut dapat
+              disesuaikan dengan kebutuhan acaramu.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-4"><button class="faq-q" onclick="toggleFaq(4)"><span>Pemesanan paling lambat
+              dilakukan H-berapa?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-4" hidden>
+            <p>Untuk memastikan pesanan dapat dipersiapkan dengan optimal, kami menyarankan pemesanan dilakukan maksimal
+              <strong>H-1</strong> sebelum acara. Untuk acara besar (50+ pax) disarankan minimal H-3.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-5"><button class="faq-q" onclick="toggleFaq(5)"><span>Bagaimana metode pembayaran
+              di Dapur Sultan?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-5" hidden>
+            <p>Pembayaran dapat dilakukan melalui <strong>Transfer / Virtual Account (VA)</strong> maupun <strong>Cash
+                On Delivery</strong>. Kamu dapat memberikan DP terlebih dahulu, dengan pelunasan maksimal pada hari H
+              pengiriman.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-6"><button class="faq-q" onclick="toggleFaq(6)"><span>Apakah Dapur Sultan melayani
+              di luar Jabodetabek?</span><span class="faq-arrow">?</span></button>
+          <div class="faq-a" id="faq-ans-6" hidden>
+            <p>Saat ini Dapur Sultan melayani area <strong>Jabodetabek</strong> dan sekitarnya. Untuk wilayah lain,
+              silakan hubungi CS kami terlebih dahulu untuk konfirmasi ketersediaan pengiriman.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-inner">
+        <img src="img/logo.webp" alt="Dapur Sultan" class="footer-logo" />
+        <div class="footer-links">
+          <a href="#promo-section" class="footer-link">Promo</a>
+          <span class="footer-sep">&#183;</span>
+          <a href="#menu-ayam-section" class="footer-link">Menu</a>
+          <span class="footer-sep">&#183;</span>
+          <a href="#faq-section" class="footer-link">FAQ</a>
+          <span class="footer-sep">&#183;</span>
+          <a href="#contact-section" class="footer-link">Kontak</a>
+        </div>
+        <p class="footer-copy">&copy; 2025 Dapur Sultan. All rights reserved.</p>
+      </div>
+    </footer>
+    <nav class="bottom-nav" id="bottom-nav">
+      <a href="#" class="nav-item nav-active" id="nav-home">
+        <div class="nav-icon-wrap"><img src="img/logo.webp" alt="" class="nav-logo-icon" /></div><span>Beranda</span>
       </a>
-      <a href="https://wa.me/6282112882600?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20pesan%20katering" class="contact-card" id="contact-wa2" target="_blank" rel="noopener">
-        <div class="contact-card-icon wa-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-        <div class="contact-card-info"><span class="contact-card-label">CS 2 - Admin Backup</span><span class="contact-card-num">0821-1288-2600</span><span class="contact-card-status">&#127956; Online Sekarang</span></div>
-        <span class="contact-card-arrow">&#8250;</span>
+      <a href="daftar-menu.html" class="nav-item" id="nav-menu">
+        <div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            width="22" height="22">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+          </svg></div><span>Menu</span>
       </a>
-    </div>
-    <div class="contact-info-row">
-      <div class="contact-info-item"><span class="contact-info-icon">&#128205;</span><span>Melayani area Jabodetabek &amp; sekitarnya</span></div>
-      <div class="contact-info-item"><span class="contact-info-icon">&#9200;</span><span>Buka setiap hari 07.00 - 21.00 WIB</span></div>
-      <div class="contact-info-item"><span class="contact-info-icon">&#128666;</span><span>Pengiriman ke seluruh area pesanan</span></div>
-      <div class="contact-info-item"><span class="contact-info-icon">&#128179;</span><span>Transfer, VA, COD tersedia</span></div>
-    </div>
-  </section>
-  <section class="faq-section" id="faq-section">
-    <div class="section-header-light"><h2 class="section-title-dark">Paling Sering<br/>Ditanya Pelanggan</h2></div>
-    <div class="faq-list" id="faq-list">
-      <div class="faq-item" id="faq-1"><button class="faq-q" onclick="toggleFaq(1)"><span>Apa itu Dapur Sultan?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-1" hidden><p>Dapur Sultan adalah layanan katering yang menyediakan berbagai pilihan hidangan untuk acara kecil maupun besar. Dengan menu yang lezat dan berkualitas, Dapur Sultan cocok untuk arisan, syukuran, ulang tahun, meeting kantor, hingga berbagai acara spesial lainnya.</p><p>Mau acara lebih praktis tanpa pusing urusan makanan? Serahkan hidangannya kepada Dapur Sultan.</p></div></div>
-      <div class="faq-item" id="faq-2"><button class="faq-q" onclick="toggleFaq(2)"><span>Bagaimana cara memesan makanan di Dapur Sultan?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-2" hidden><p>Pilih menu yang kamu inginkan, tentukan jumlah pesanan dan tanggal acara, lalu hubungi Customer Service Dapur Sultan melalui salah satu nomor berikut:</p><div class="faq-wa-links"><a href="https://wa.me/6281380033670" class="faq-wa-btn" target="_blank">CS 1: 0813-8003-3670</a><a href="https://wa.me/6282112882600" class="faq-wa-btn" target="_blank">CS 2: 0821-1288-2600</a></div></div></div>
-      <div class="faq-item" id="faq-3"><button class="faq-q" onclick="toggleFaq(3)"><span>Apakah ada minimal pemesanan di Dapur Sultan?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-3" hidden><p>Ya, Dapur Sultan menerima pemesanan dengan minimal <strong>10 pax</strong>. Jumlah tersebut dapat disesuaikan dengan kebutuhan acaramu.</p></div></div>
-      <div class="faq-item" id="faq-4"><button class="faq-q" onclick="toggleFaq(4)"><span>Pemesanan paling lambat dilakukan H-berapa?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-4" hidden><p>Untuk memastikan pesanan dapat dipersiapkan dengan optimal, kami menyarankan pemesanan dilakukan maksimal <strong>H-1</strong> sebelum acara. Untuk acara besar (50+ pax) disarankan minimal H-3.</p></div></div>
-      <div class="faq-item" id="faq-5"><button class="faq-q" onclick="toggleFaq(5)"><span>Bagaimana metode pembayaran di Dapur Sultan?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-5" hidden><p>Pembayaran dapat dilakukan melalui <strong>Transfer / Virtual Account (VA)</strong> maupun <strong>Cash On Delivery</strong>. Kamu dapat memberikan DP terlebih dahulu, dengan pelunasan maksimal pada hari H pengiriman.</p></div></div>
-      <div class="faq-item" id="faq-6"><button class="faq-q" onclick="toggleFaq(6)"><span>Apakah Dapur Sultan melayani di luar Jabodetabek?</span><span class="faq-arrow">?</span></button><div class="faq-a" id="faq-ans-6" hidden><p>Saat ini Dapur Sultan melayani area <strong>Jabodetabek</strong> dan sekitarnya. Untuk wilayah lain, silakan hubungi CS kami terlebih dahulu untuk konfirmasi ketersediaan pengiriman.</p></div></div>
-    </div>
-  </section>
+      <a href="keranjang.html" class="nav-item" id="nav-cart">
+        <div class="nav-icon-wrap" style="position:relative;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" style="display:none">0</span>
+        </div>
+        <span>Keranjang</span>
+      </a>
+      <a href="#faq-section" class="nav-item" id="nav-faq">
+        <div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            width="22" height="22">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg></div><span>FAQ</span>
+      </a>
+      <a href="#contact-section" class="nav-item" id="nav-kontak">
+        <div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            width="22" height="22">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 017 2a2 2 0 011.92.5v2.9A2 2 0 017.48 7.5C6.76 9 6.54 10.6 7 12c.3 1 .77 1.9 1.43 2.73l.4.5A11 11 0 0012 18a11 11 0 002.73 1.43l.5.4c.83.66 1.73 1.13 2.73 1.43 1.4.46 3 .24 4.5-.48A2 2 0 0124 19.08v-2.16z" />
+          </svg></div><span>Kontak</span>
+      </a>
+    </nav>
+  </div>
 
-  <footer class="site-footer" id="site-footer">
-    <div class="footer-inner">
-      <img src="img/logo.png" alt="Dapur Sultan" class="footer-logo" />
-      <p class="footer-tagline">Selera Para Raja</p>
-      <div class="footer-ornament"><span>&#128081;</span><span class="ornament-dash"></span><span>&#127869;&#65039;</span></div>
-      <div class="footer-contact">
-        <p class="footer-label">Hubungi Kami</p>
-        <a href="https://wa.me/6281380033670" class="footer-wa" target="_blank">&#128242; 0813-8003-3670</a>
-        <a href="https://wa.me/6282112882600" class="footer-wa" target="_blank">&#128242; 0821-1288-2600</a>
-      </div>
-      <div class="footer-links">
-        <a href="#promo-section" class="footer-link">Promo</a>
-        <span class="footer-sep">&#183;</span>
-        <a href="#menu-ayam-section" class="footer-link">Menu</a>
-        <span class="footer-sep">&#183;</span>
-        <a href="#faq-section" class="footer-link">FAQ</a>
-        <span class="footer-sep">&#183;</span>
-        <a href="#contact-section" class="footer-link">Kontak</a>
-      </div>
-      <p class="footer-copy">&copy; 2025 Dapur Sultan. All rights reserved.</p>
-    </div>
-  </footer>
-  <nav class="bottom-nav" id="bottom-nav">
-    <a href="#" class="nav-item nav-active" id="nav-home"><div class="nav-icon-wrap"><img src="img/logo.png" alt="" class="nav-logo-icon" /></div><span>Beranda</span></a>
-    <a href="#menu-ayam-section" class="nav-item" id="nav-menu"><div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div><span>Menu</span></a>
-    <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20pesan" class="nav-item nav-item-wa" id="nav-pesan" target="_blank" rel="noopener"><div class="nav-icon-wa"><svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><span>Pesan</span></a>
-    <a href="#faq-section" class="nav-item" id="nav-faq"><div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><span>FAQ</span></a>
-    <a href="#contact-section" class="nav-item" id="nav-kontak"><div class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 017 2a2 2 0 011.92.5v2.9A2 2 0 017.48 7.5C6.76 9 6.54 10.6 7 12c.3 1 .77 1.9 1.43 2.73l.4.5A11 11 0 0012 18a11 11 0 002.73 1.43l.5.4c.83.66 1.73 1.13 2.73 1.43 1.4.46 3 .24 4.5-.48A2 2 0 0124 19.08v-2.16z"/></svg></div><span>Kontak</span></a>
-  </nav>
-</div>
+  <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20bertanya" class="float-wa"
+    id="float-wa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span class="float-wa-label">Tanya CS</span>
+  </a>
 
-<a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20bertanya" class="float-wa" id="float-wa" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  <span class="float-wa-label">Tanya CS</span>
-</a>
-<script src="main.js"></script>
+  <!-- Floating Toast on Home -->
+  <div class="home-toast" id="home-toast"></div>
+
+  <script src="menu-data.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Home cart helper
+    function addHomeCart(id, qty, name) {
+      if (window.DS_CART) {
+        DS_CART.add(id, qty);
+        showHomeToast('âœ“ ' + name + ' ditambahkan ke keranjang');
+      }
+    }
+    function showHomeToast(msg) {
+      const t = document.getElementById('home-toast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+    // Update badge on load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.DS_CART) DS_CART.updateBadge();
+    });
+  </script>
 </body>
+
 </html>

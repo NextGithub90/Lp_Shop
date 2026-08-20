@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Daftar Menu - Dapur Sultan | Katering Premium</title>
+  <meta name="description"
+    content="Jelajahi daftar menu lengkap Dapur Sultan - Nasi Box, Hantaran, Paket Luxury, Tumpeng Mini, Nasi Besek, Kudapan, Dimsum & Hampers. Pesan via WhatsApp!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="daftar-menu.css" />
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+    <!-- Sticky Search Bar -->
+    <div class="top-search-bar" id="top-search-bar">
+      <a href="index.html" class="back-btn" aria-label="Kembali ke Beranda">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+          <path d="M19 12H5M5 12l7-7M5 12l7 7" />
+        </svg>
+      </a>
+      <div class="top-search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input type="text" id="menu-search" placeholder="Cari nama menu, isi, atau acara..." autocomplete="off" />
+      </div>
+      <a href="keranjang.html" class="top-cart-btn" aria-label="Keranjang Belanja">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="cart-badge" style="display:none">0</span>
+      </a>
+    </div>
+
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span class="sep">&#8250;</span>
+      <span>Daftar Menu</span>
+      <span class="sep">&#8250;</span>
+      <span id="breadcrumb-cat">Semua Menu</span>
+    </nav>
+
+    <!-- Intro Text -->
+    <div class="menu-intro">
+      <h1 id="menu-intro-title">Menu Katering Premium Dapur Sultan</h1>
+      <p id="menu-intro-desc">Nikmati beragam pilihan menu katering berkualitas tinggi dari Dapur Sultan - dari nasi box
+        praktis hingga paket luxury mewah. Setiap hidangan diracik dari bahan segar pilihan, dikemas higienis, dan siap
+        diantar ke lokasi Anda.</p>
+    </div>
+
+    <!-- Category Scroll -->
+    <div class="cat-scroll-wrap">
+      <div class="cat-scroll" id="cat-scroll">
+        <button class="cat-pill active" data-cat="semua" onclick="filterCat('semua', this)">
+          <div class="cat-pill-logo-wrap">
+            <img src="img/logo.webp" alt="Semua Menu" class="cat-pill-logo" />
+          </div>
+          <span class="cat-pill-label">Semua</span>
+          <span class="cat-pill-count">27 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="nasi-box" onclick="filterCat('nasi-box', this)">
+          <img src="img/ayam_Goreng.webp" alt="Nasi Box" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Nasi Box</span>
+          <span class="cat-pill-count">6 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="hantaran" onclick="filterCat('hantaran', this)">
+          <img src="img/cat_hantaran.webp" alt="Hantaran" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Hantaran</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="paket-luxury" onclick="filterCat('paket-luxury', this)">
+          <img src="img/promo_meeting.webp" alt="Paket Luxury" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Paket Luxury</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="tumpeng-mini" onclick="filterCat('tumpeng-mini', this)">
+          <img src="img/promo_tumpeng.webp" alt="Tumpeng Mini" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Tumpeng Mini</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="nasi-besek" onclick="filterCat('nasi-besek', this)">
+          <img src="img/cat_nasi_besek.webp" alt="Nasi Besek" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Nasi Besek</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="kudapan" onclick="filterCat('kudapan', this)">
+          <img src="img/cat_kudapan.webp" alt="Kudapan" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Kudapan</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="dimsum" onclick="filterCat('dimsum', this)">
+          <img src="img/cat_dimsum.webp" alt="Dimsum" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Dimsum</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+        <button class="cat-pill" data-cat="hampers" onclick="filterCat('hampers', this)">
+          <img src="img/cat_hampers.webp" alt="Hampers" class="cat-pill-img" loading="lazy" />
+          <span class="cat-pill-label">Hampers</span>
+          <span class="cat-pill-count">3 Menu</span>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Sort + Filter Bar -->
+    <div class="filter-bar">
+      <!-- Sort Dropdown Button -->
+      <button class="sort-btn" id="sort-btn" onclick="toggleSortSheet()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
+          <path d="M3 6h18M7 12h10M11 18h2" />
+        </svg>
+        <span id="sort-label">Rekomendasi</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"
+          class="sort-chevron" id="sort-chevron">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+
+      <!-- Filter Quick Pills -->
+      <div class="filter-pills-scroll">
+        <button class="fpill fpill-active" data-filter="semua" onclick="filterChip('semua', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          Semua
+        </button>
+        <button class="fpill" data-filter="promo" onclick="filterChip('promo', this)">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+            <path
+              d="M9.5 2A7.5 7.5 0 0 0 2 9.5c0 4.14 3.36 7.5 7.5 7.5S17 13.64 17 9.5 13.64 2 9.5 2zm0 2a5.5 5.5 0 1 1 0 11A5.5 5.5 0 0 1 9.5 4zM22 20l-4.35-4.35a7.46 7.46 0 0 1-1.37 1.41L20.59 21.4 22 20z" />
+          </svg>
+          Promo
+        </button>
+        <button class="fpill" data-filter="best" onclick="filterChip('best', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Terlaris
+        </button>
+        <button class="fpill" data-filter="baru" onclick="filterChip('baru', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Terbaru
+        </button>
+        <button class="fpill" data-filter="murah" onclick="filterChip('murah', this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          Termurah
+        </button>
+      </div>
+    </div>
+
+    <!-- Sort Bottom Sheet -->
+    <div class="sort-overlay" id="sort-overlay" onclick="closeSortSheet()"></div>
+    <div class="sort-sheet" id="sort-sheet">
+      <div class="sort-sheet-handle"></div>
+      <h3 class="sort-sheet-title">Urutkan</h3>
+      <div class="sort-options">
+        <label class="sort-option sort-option-selected" id="sort-opt-semua">
+          <input type="radio" name="sort" value="semua" checked onchange="applySortSheet('semua', 'Rekomendasi')" />
+          <span>Rekomendasi</span>
+          <div class="sort-radio-dot"></div>
+        </label>
+        <label class="sort-option" id="sort-opt-best">
+          <input type="radio" name="sort" value="best" onchange="applySortSheet('best', 'Paling Laku')" />
+          <span>Paling Laku</span>
+          <div class="sort-radio-dot"></div>
+        </label>
+        <label class="sort-option" id="sort-opt-baru">
+          <input type="radio" name="sort" value="baru" onchange="applySortSheet('baru', 'Terbaru')" />
+          <span>Terbaru</span>
+          <div class="sort-radio-dot"></div>
+        </label>
+        <label class="sort-option" id="sort-opt-murah">
+          <input type="radio" name="sort" value="murah" onchange="applySortSheet('murah', 'Harga Terendah')" />
+          <span>Harga Terendah</span>
+          <div class="sort-radio-dot"></div>
+        </label>
+        <label class="sort-option" id="sort-opt-mahal">
+          <input type="radio" name="sort" value="mahal" onchange="applySortSheet('mahal', 'Harga Tertinggi')" />
+          <span>Harga Tertinggi</span>
+          <div class="sort-radio-dot"></div>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Menu List Header -->
+    <div class="menu-list-header">
+      <h2 id="menu-section-title">Semua Menu</h2>
+      <span class="count-badge" id="menu-count">26 Menu</span>
+    </div>
+
+    <!-- Menu Item List -->
+    <div class="menu-list" id="menu-list"></div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="empty-state">
+      <div class="empty-state-icon">&#128269;</div>
+      <h3>Menu Tidak Ditemukan</h3>
+      <p>Coba kata kunci lain atau pilih kategori berbeda.</p>
+      <button class="btn-pesan" style="margin:16px auto 0; display:inline-flex;"
+        onclick="openWA('Info Menu Lengkap')">Tanya CS</button>
+    </div>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <a href="index.html" class="nav-item" id="nav-home">
+        <div class="nav-icon-wrap"><img src="img/logo.webp" alt="" class="nav-logo-icon" /></div><span>Beranda</span>
+      </a>
+      <a href="daftar-menu.html" class="nav-item nav-active" id="nav-menu">
+        <div class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+          </svg>
+        </div><span>Menu</span>
+      </a>
+      <a href="keranjang.html" class="nav-item" id="nav-cart">
+        <div class="nav-icon-wrap" style="position:relative;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" style="display:none">0</span>
+        </div>
+        <span>Keranjang</span>
+      </a>
+      <a href="index.html#faq-section" class="nav-item" id="nav-faq">
+        <div class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </div><span>FAQ</span>
+      </a>
+      <a href="index.html#contact-section" class="nav-item" id="nav-kontak">
+        <div class="nav-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63 19.79 19.79 0 017 2a2 2 0 011.92.5v2.9A2 2 0 017.48 7.5C6.76 9 6.54 10.6 7 12c.3 1 .77 1.9 1.43 2.73l.4.5A11 11 0 0012 18a11 11 0 002.73 1.43l.5.4c.83.66 1.73 1.13 2.73 1.43 1.4.46 3 .24 4.5-.48A2 2 0 0124 19.08v-2.16z" />
+          </svg>
+        </div><span>Kontak</span>
+      </a>
+    </nav>
+  </div>
+
+
+
+  <script src="menu-data.js"></script>
+  <script src="daftar-menu.js"></script>
+</body>
+
+</html>
