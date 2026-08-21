@@ -2,8 +2,12 @@
 
 // ===== OPEN WHATSAPP =====
 function openWA(menu) {
-  const msg = encodeURIComponent(`Halo Dapur Sultan, saya ingin info tentang: ${menu}`);
-  window.open(`https://wa.me/6281380033670?text=${msg}`, '_blank');
+  const msg = `Halo Dapur Sultan, saya ingin info tentang: ${menu}`;
+  if (typeof openCSModal === 'function') {
+    openCSModal(msg);
+  } else {
+    window.open(`https://wa.me/6281380033670?text=${encodeURIComponent(msg)}`, '_blank');
+  }
 }
 
 // ===== FAQ ACCORDION =====
@@ -65,9 +69,17 @@ function animateCounters() {
     let current = 0;
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
-      el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+      if (isDecimal) {
+        el.textContent = current.toFixed(1);
+      } else {
+        el.textContent = target >= 1000 ? Math.floor(current).toLocaleString('id-ID') : Math.floor(current);
+      }
       if (current >= target) {
-        el.textContent = isDecimal ? target.toFixed(1) : target;
+        if (isDecimal) {
+          el.textContent = target.toFixed(1);
+        } else {
+          el.textContent = target >= 1000 ? target.toLocaleString('id-ID') : target;
+        }
         clearInterval(timer);
       }
     }, 16);
@@ -130,17 +142,135 @@ document.querySelectorAll('.site-header, #kategori-section, #faq-section, #conta
   navObserver.observe(el);
 });
 
-// ===== SEARCH FUNCTIONALITY =====
-const searchInput = document.getElementById('hero-search');
-if (searchInput) {
-  searchInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter' && this.value.trim()) {
-      const msg = encodeURIComponent(`Halo Dapur Sultan, saya cari menu: ${this.value.trim()}`);
-      window.open(`https://wa.me/6281380033670?text=${msg}`, '_blank');
-      this.value = '';
+// ===== HERO LIVE SEARCH DROPDOWN =====
+(function initHeroSearch() {
+  const searchInput = document.getElementById('hero-search');
+  const searchWrap = document.getElementById('hero-search-wrap');
+  const clearBtn = document.getElementById('hero-search-clear');
+  const dropdown = document.getElementById('hero-search-dropdown');
+
+  if (!searchInput || !dropdown) return;
+
+  function renderSearchResults(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      dropdown.style.display = 'none';
+      dropdown.innerHTML = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      return;
+    }
+
+    if (clearBtn) clearBtn.style.display = 'flex';
+
+    if (typeof DS_MENU === 'undefined' || !DS_MENU.length) {
+      dropdown.style.display = 'none';
+      return;
+    }
+
+    const matches = DS_MENU.filter(m => {
+      const nameMatch = m.name && m.name.toLowerCase().includes(q);
+      const descMatch = (m.shortDesc || m.desc || '').toLowerCase().includes(q);
+      const catMatch = (m.catLabel || m.cat || '').toLowerCase().includes(q);
+      const tagsMatch = m.tags && m.tags.some(t => t.toLowerCase().includes(q));
+      return nameMatch || descMatch || catMatch || tagsMatch;
+    });
+
+    if (matches.length === 0) {
+      dropdown.innerHTML = `
+        <div class="search-empty-state">
+          <p>🔍 Menu "<strong>${escapeHtml(query)}</strong>" tidak ditemukan</p>
+          <a href="daftar-menu.html">Lihat semua daftar menu &rarr;</a>
+        </div>
+      `;
+      dropdown.style.display = 'block';
+      return;
+    }
+
+    const topMatches = matches.slice(0, 5);
+    let html = topMatches.map(m => {
+      const highlightedName = highlightMatch(m.name, q);
+      return `
+        <a href="detail-produk.html?id=${m.id}" class="search-item-result">
+          <img src="${m.img}" alt="${escapeHtml(m.name)}" class="search-item-thumb" onerror="this.src='img/ayam_Goreng.webp'" />
+          <div class="search-item-info">
+            <div class="search-item-title">${highlightedName}</div>
+            <div class="search-item-meta">
+              <span class="search-item-cat">${m.catLabel || 'Menu'}</span>
+              <span class="search-item-price">${m.price}</span>
+            </div>
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    if (matches.length > 5) {
+      html += `
+        <a href="daftar-menu.html" class="search-footer-btn">
+          Lihat semua ${matches.length} hasil di Daftar Menu &rarr;
+        </a>
+      `;
+    } else {
+      html += `
+        <a href="daftar-menu.html" class="search-footer-btn">
+          Buka Halaman Daftar Menu &rarr;
+        </a>
+      `;
+    }
+
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'block';
+  }
+
+  function highlightMatch(text, q) {
+    const idx = text.toLowerCase().indexOf(q);
+    if (idx === -1) return escapeHtml(text);
+    const before = text.substring(0, idx);
+    const match = text.substring(idx, idx + q.length);
+    const after = text.substring(idx + q.length);
+    return `${escapeHtml(before)}<mark>${escapeHtml(match)}</mark>${escapeHtml(after)}`;
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  }
+
+  searchInput.addEventListener('input', function() {
+    renderSearchResults(this.value);
+  });
+
+  searchInput.addEventListener('focus', function() {
+    if (this.value.trim()) renderSearchResults(this.value);
+  });
+
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const q = this.value.trim();
+      if (q) {
+        window.location.href = 'daftar-menu.html';
+      }
+    } else if (e.key === 'Escape') {
+      dropdown.style.display = 'none';
     }
   });
-}
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      searchInput.value = '';
+      dropdown.style.display = 'none';
+      dropdown.innerHTML = '';
+      clearBtn.style.display = 'none';
+      searchInput.focus();
+    });
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (searchWrap && !searchWrap.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+})();
 
 // ===== SCROLL TO TOP on logo click =====
 const logo = document.getElementById('site-logo');

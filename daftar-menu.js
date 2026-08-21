@@ -11,10 +11,10 @@ function goDetail(id) {
 function quickAddCart(id, name, event) {
   if (event) event.stopPropagation();
   if (window.DS_CART) {
-    const item = DS_MENU.find(m => m.id === id);
-    const qty = item ? (item.minOrder || 1) : 1;
+    const item = (typeof DS_MENU !== 'undefined' ? DS_MENU : []).find(m => m.id === id);
+    const qty = item ? (item.minOrder || 10) : 10;
     DS_CART.add(id, qty);
-    showMenuToast(`✓ ${name} ditambahkan ke keranjang`);
+    showMenuToast(`✓ ${qty} ${item && item.satuanOrder ? item.satuanOrder : 'porsi'} ${name} ditambahkan ke keranjang`);
   }
 }
 
@@ -39,8 +39,12 @@ let searchQuery = '';
 
 // ===== HELPERS =====
 function openWA(menu) {
-  const msg = encodeURIComponent(`Halo Dapur Sultan, saya ingin info tentang: ${menu}`);
-  window.open(`https://wa.me/6281380033670?text=${msg}`, '_blank');
+  const msg = `Halo Dapur Sultan, saya ingin info tentang: ${menu}`;
+  if (typeof openCSModal === 'function') {
+    openCSModal(msg);
+  } else {
+    window.open(`https://wa.me/6281380033670?text=${encodeURIComponent(msg)}`, '_blank');
+  }
 }
 
 // ===== RENDER MENU =====
@@ -85,21 +89,17 @@ function renderMenu() {
     <div class="menu-item fade-in" onclick="goDetail(${m.id})">
       <div class="menu-item-img-wrap">
         <img src="${m.img}" alt="${m.name}" class="menu-item-img" loading="lazy" onerror="this.src='img/ayam_Goreng.webp'" />
-        ${m.discount ? `<span class="discount-badge">${m.discount}</span>` : ''}
       </div>
       <div class="menu-item-info">
         <div class="menu-item-name">${m.name}</div>
         <div class="menu-item-desc">${m.desc}</div>
         <div class="menu-item-tags">
-          ${m.isNew ? `<span class="tag tag-baru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Baru</span>` : ''}
-          ${m.isPromo ? `<span class="tag tag-promo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Promo</span>` : ''}
           ${m.isBest ? `<span class="tag tag-best"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Terlaris</span>` : ''}
           <span class="tag tag-halal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Halal</span>
         </div>
         <div class="menu-item-price-row">
           <div>
             <span class="menu-item-price">${m.price}</span>
-            ${m.priceOri ? `<span class="menu-item-price-original">${m.priceOri}</span>` : ''}
           </div>
           <div class="menu-item-actions">
             <button class="btn-quick-cart" onclick="quickAddCart(${m.id}, '${safeName}', event)" title="Tambah ke Keranjang">
@@ -126,10 +126,10 @@ function renderMenu() {
 
 // ===== INTRO CONTENT BY CATEGORY =====
 const catIntros = {
-  'semua': { title:'Menu Katering Premium Dapur Sultan', desc:'Nikmati beragam pilihan menu katering berkualitas tinggi dari Dapur Sultan - dari nasi box praktis hingga paket luxury mewah. Setiap hidangan diracik dari bahan segar pilihan, dikemas higienis, dan siap diantar ke lokasi Anda.' },
+  'semua': { title:'Menu Katering Premium Dapur Sultan', desc:'Nikmati beragam pilihan menu katering berkualitas tinggi dari Dapur Sultan - dari nasi box praktis hingga paket sultan istimewa. Setiap hidangan diracik dari bahan segar pilihan, dikemas higienis, dan siap diantar ke lokasi Anda.' },
   'nasi-box': { title:'Nasi Box Jakarta & Nasi Kotak untuk Setiap Acara', desc:'Dapur Sultan menyediakan nasi box dengan cita rasa rumahan untuk berbagai kebutuhan mulai dari rapat kantor, seminar, arisan, hingga syukuran keluarga. Setiap nasi box diracik dari bahan segar pilihan dan dikemas higienis.' },
   'hantaran': { title:'Paket Hantaran Cantik untuk Acara Pernikahan & Spesial', desc:'Paket hantaran cantik dan berkesan untuk pernikahan, akad nikah, syukuran, dan seserahan. Dikemas dengan tampilan premium dan rasa autentik khas masakan rumahan Nusantara yang selalu dikenang.' },
-  'paket-luxury': { title:'Paket Luxury - Katering Premium Eksklusif Terbaik', desc:'Pengalaman katering mewah dengan bahan-bahan pilihan premium, penyajian eksklusif, dan layanan profesional. Cocok untuk acara perusahaan, pesta ulang tahun mewah, dan perayaan istimewa.' },
+  'paket-sultan': { title:'Paket Sultan - Katering Premium Eksklusif Terbaik', desc:'Pengalaman katering istimewa dengan bahan-bahan pilihan premium, penyajian eksklusif, dan layanan profesional. Cocok untuk acara perusahaan, pesta ulang tahun mewah, dan perayaan istimewa.' },
   'tumpeng-mini': { title:'Tumpeng Mini untuk Syukuran & Ulang Tahun', desc:'Tumpeng mini cantik dengan pilihan tumpeng kuning, putih, dan hias. Cocok untuk syukuran, ulang tahun, hari jadi, dan acara keluarga. Tersedia berbagai ukuran sesuai jumlah tamu undangan.' },
   'nasi-besek': { title:'Nasi Besek Bambu - Cita Rasa Tradisional Otentik', desc:'Nasi disajikan dalam besek bambu anyaman tradisional, memberi kesan alami dan otentik Nusantara. Pilihan lauk beragam mulai dari ayam, ikan, sapi hingga vegetarian. Higienis dan ramah lingkungan.' },
   'kudapan': { title:'Kudapan & Snack Box untuk Rapat & Arisan', desc:'Aneka kudapan dan snack box berkualitas untuk meeting kantor, arisan, seminar, dan acara sosial. Variasi kue basah tradisional, kue kering modern, dan minuman segar dalam kemasan cantik.' },
@@ -138,7 +138,7 @@ const catIntros = {
 };
 const catLabels = {
   'semua':'Semua Menu','nasi-box':'Nasi Box','hantaran':'Hantaran',
-  'paket-luxury':'Paket Luxury','tumpeng-mini':'Tumpeng Mini',
+  'paket-sultan':'Paket Sultan','tumpeng-mini':'Tumpeng Mini',
   'nasi-besek':'Nasi Besek','kudapan':'Kudapan','dimsum':'Dimsum','hampers':'Hampers'
 };
 

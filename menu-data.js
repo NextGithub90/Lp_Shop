@@ -15,7 +15,6 @@ const DS_MENU = [
     price: 'Rp 35.000', priceNum: 35000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.8, reviewCount: 128,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Box', 'Ayam Goreng', 'Meeting', 'Kantor'],
   },
   {
@@ -27,10 +26,9 @@ const DS_MENU = [
     minOrder: 10, satuanOrder: 'porsi',
     img: 'img/ayamBakar_rempah.webp',
     gallery: ['img/ayamBakar_rempah.webp','img/rempah_juara.webp','img/qual_pengemasan.webp','img/testi_2.webp'],
-    price: 'Rp 38.000', priceNum: 38000, priceOri: 'Rp 45.000', discount: '16%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 38.000', priceNum: 38000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.9, reviewCount: 87,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Box', 'Ayam Bakar', 'Rempah', 'Arisan'],
   },
   {
@@ -45,7 +43,6 @@ const DS_MENU = [
     price: 'Rp 32.000', priceNum: 32000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.7, reviewCount: 203,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Box', 'Ayam Geprek', 'Pedas', 'Kantor'],
   },
   {
@@ -57,10 +54,9 @@ const DS_MENU = [
     minOrder: 10, satuanOrder: 'porsi',
     img: 'img/ayamGoreng_lengkuas.webp',
     gallery: ['img/ayamGoreng_lengkuas.webp','img/Lengkuas_Juara.webp','img/qual_pengemasan.webp','img/qual_chef.webp'],
-    price: 'Rp 37.000', priceNum: 37000, priceOri: 'Rp 42.000', discount: '12%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 37.000', priceNum: 37000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.8, reviewCount: 56,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Box', 'Ayam Lengkuas', 'Syukuran'],
   },
   {
@@ -75,7 +71,6 @@ const DS_MENU = [
     price: 'Rp 40.000', priceNum: 40000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: false,
     rating: 4.6, reviewCount: 34,
-    deliveryTime: '3 Jam', estimasi: 'Siap 3 jam setelah pemesanan',
     tags: ['Nasi Box', 'Rempah', 'Premium'],
   },
   {
@@ -87,10 +82,9 @@ const DS_MENU = [
     minOrder: 10, satuanOrder: 'porsi',
     img: 'img/sultan_penyet.webp',
     gallery: ['img/sultan_penyet.webp','img/sultan_lengkuas.webp','img/qual_pengemasan.webp','img/testi_3.webp'],
-    price: 'Rp 36.000', priceNum: 36000, priceOri: 'Rp 42.000', discount: '14%',
-    isNew: false, isPromo: true, isBest: true,
+    price: 'Rp 36.000', priceNum: 36000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: true,
     rating: 4.9, reviewCount: 175,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Box', 'Penyet', 'Pedas', 'Favorit'],
   },
   // HANTARAN
@@ -103,10 +97,9 @@ const DS_MENU = [
     minOrder: 1, satuanOrder: 'paket',
     img: 'img/promo_arisan.webp',
     gallery: ['img/promo_arisan.webp','img/cat_hantaran.webp','img/qual_pengemasan.webp','img/testi_1.webp'],
-    price: 'Rp 1.150.000', priceNum: 1150000, priceOri: 'Rp 1.321.820', discount: '13%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 1.150.000', priceNum: 1150000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.9, reviewCount: 42,
-    deliveryTime: '1 Hari', estimasi: 'Pesan H-1 sebelum acara',
     tags: ['Hantaran', 'Pernikahan', 'Premium', 'Syukuran'],
   },
   {
@@ -121,7 +114,6 @@ const DS_MENU = [
     price: 'Rp 850.000', priceNum: 850000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.8, reviewCount: 67,
-    deliveryTime: '4 Jam', estimasi: 'Pesan min. 4 jam sebelum acara',
     tags: ['Hantaran', 'Arisan', 'Cantik'],
   },
   {
@@ -136,28 +128,26 @@ const DS_MENU = [
     price: 'Rp 650.000', priceNum: 650000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: false,
     rating: 4.7, reviewCount: 28,
-    deliveryTime: '4 Jam', estimasi: 'Pesan min. 4 jam sebelum acara',
     tags: ['Hantaran', 'Syukuran', 'Keluarga'],
   },
-  // PAKET LUXURY
+  // PAKET SULTAN
   {
-    id: 10, cat: 'paket-luxury', catLabel: 'Paket Luxury',
-    name: 'Paket Besek Nusantara Luxury',
-    shortDesc: 'Nasi Besek Sapi Lada Hitam + Es Kuwut untuk acara high-end eksklusif.',
-    desc: 'Pengalaman kuliner Nusantara yang mewah dan berkesan. Nasi dalam besek bambu premium dengan daging sapi lada hitam berkualitas tinggi, disajikan lengkap dengan Es Kuwut yang menyegarkan. Pilihan sempurna untuk acara perusahaan dan gala dinner.',
-    isi: ['Nasi besek bambu premium', 'Daging sapi lada hitam', 'Es Kuwut segar', 'Lauk pelengkap premium', 'Kemasan luxury'],
-    minOrder: 20, satuanOrder: 'porsi',
+    id: 10, cat: 'paket-sultan', catLabel: 'Paket Sultan',
+    name: 'Paket Besek Nusantara Sultan',
+    shortDesc: 'Nasi Besek Sapi Lada Hitam + Es Kuwut untuk acara spesial eksklusif.',
+    desc: 'Pengalaman kuliner Nusantara yang istimewa dan berkesan. Nasi dalam besek bambu premium dengan daging sapi lada hitam berkualitas tinggi, disajikan lengkap dengan Es Kuwut yang menyegarkan. Pilihan sempurna untuk acara perusahaan dan gala dinner.',
+    isi: ['Nasi besek bambu premium', 'Daging sapi lada hitam', 'Es Kuwut segar', 'Lauk pelengkap premium', 'Kemasan eksklusif'],
+    minOrder: 10, satuanOrder: 'porsi',
     img: 'img/qual_pengemasan.webp',
     gallery: ['img/qual_pengemasan.webp','img/cat_nasi_besek.webp','img/qual_admin.webp','img/qual_chef.webp'],
-    price: 'Rp 1.150.000', priceNum: 1150000, priceOri: 'Rp 1.493.506', discount: '23%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 1.150.000', priceNum: 1150000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 5.0, reviewCount: 19,
-    deliveryTime: '1 Hari', estimasi: 'Pesan H-1 untuk hasil terbaik',
-    tags: ['Luxury', 'Besek', 'Sapi', 'Corporate'],
+    tags: ['Paket Sultan', 'Besek', 'Sapi', 'Corporate'],
   },
   {
-    id: 11, cat: 'paket-luxury', catLabel: 'Paket Luxury',
-    name: 'Paket Sultan Luxury VIP',
+    id: 11, cat: 'paket-sultan', catLabel: 'Paket Sultan',
+    name: 'Paket Sultan VIP',
     shortDesc: 'Menu eksklusif 5 hidangan utama + minuman premium + dekorasi meja.',
     desc: 'Paket katering paling eksklusif dari Dapur Sultan. Lima hidangan utama dipilih dari menu terbaik kami, dilengkapi minuman premium dan dekorasi meja cantik. Tim profesional kami siap hadir langsung di lokasi acara Anda.',
     isi: ['5 hidangan utama pilihan chef', 'Minuman premium (2 jenis)', 'Dekorasi meja cantik', 'Tim pelayan profesional', 'Kemasan premium exclusive'],
@@ -167,22 +157,20 @@ const DS_MENU = [
     price: 'Rp 2.500.000', priceNum: 2500000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 5.0, reviewCount: 11,
-    deliveryTime: '2 Hari', estimasi: 'Konsultasi dulu via CS',
-    tags: ['Luxury', 'VIP', 'Corporate', 'Exclusive'],
+    tags: ['Paket Sultan', 'VIP', 'Corporate', 'Exclusive'],
   },
   {
-    id: 12, cat: 'paket-luxury', catLabel: 'Paket Luxury',
-    name: 'Paket Meeting Kantor Premium',
+    id: 12, cat: 'paket-sultan', catLabel: 'Paket Sultan',
+    name: 'Paket Meeting Kantor Sultan',
     shortDesc: 'Nasi box executive + snack box + minuman segar untuk rapat dan seminar.',
-    desc: 'Solusi katering meeting kantor yang lengkap dan profesional. Setiap peserta mendapatkan nasi box executive dengan menu premium, snack box siang, dan minuman segar. Dikemas rapid an higienis untuk memberikan kesan profesional di setiap rapat.',
+    desc: 'Solusi katering meeting kantor yang lengkap dan profesional. Setiap peserta mendapatkan nasi box executive dengan menu premium, snack box siang, dan minuman segar. Dikemas rapi dan higienis untuk memberikan kesan profesional di setiap rapat.',
     isi: ['Nasi box executive', 'Snack box (2 item)', 'Minuman segar pilihan', 'Serbet dan sendok garpu', 'Kemasan branded'],
-    minOrder: 20, satuanOrder: 'set',
+    minOrder: 10, satuanOrder: 'set',
     img: 'img/promo_meeting.webp',
     gallery: ['img/promo_meeting.webp','img/qual_pengemasan.webp','img/qual_admin.webp','img/testi_2.webp'],
-    price: 'Rp 75.000', priceNum: 75000, priceOri: 'Rp 90.000', discount: '17%',
-    isNew: false, isPromo: true, isBest: true,
+    price: 'Rp 75.000', priceNum: 75000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: true,
     rating: 4.9, reviewCount: 89,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Meeting', 'Kantor', 'Seminar', 'Corporate'],
   },
   // TUMPENG MINI
@@ -198,7 +186,6 @@ const DS_MENU = [
     price: 'Rp 250.000', priceNum: 250000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.9, reviewCount: 156,
-    deliveryTime: '4 Jam', estimasi: 'Pesan min. 4 jam sebelumnya',
     tags: ['Tumpeng', 'Syukuran', 'Ulang Tahun', 'Tradisional'],
   },
   {
@@ -210,10 +197,9 @@ const DS_MENU = [
     minOrder: 1, satuanOrder: 'buah',
     img: 'img/promo_tumpeng.webp',
     gallery: ['img/promo_tumpeng.webp','img/qual_chef.webp','img/testi_2.webp','img/qual_pengemasan.webp'],
-    price: 'Rp 320.000', priceNum: 320000, priceOri: 'Rp 380.000', discount: '16%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 320.000', priceNum: 320000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 5.0, reviewCount: 72,
-    deliveryTime: '6 Jam', estimasi: 'Pesan min. 6 jam sebelumnya',
     tags: ['Tumpeng', 'Ulang Tahun', 'Hias', 'Custom'],
   },
   {
@@ -225,10 +211,9 @@ const DS_MENU = [
     minOrder: 1, satuanOrder: 'buah',
     img: 'img/promo_tumpeng.webp',
     gallery: ['img/promo_tumpeng.webp','img/qual_pengemasan.webp','img/qual_chef.webp','img/cat_tumpeng_mini.webp'],
-    price: 'Rp 400.000', priceNum: 400000, priceOri: 'Rp 450.000', discount: '11%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 400.000', priceNum: 400000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.8, reviewCount: 38,
-    deliveryTime: '6 Jam', estimasi: 'Pesan min. 6 jam sebelumnya',
     tags: ['Tumpeng', 'Kemerdekaan', 'Nasional', 'Corporate'],
   },
   // NASI BESEK
@@ -244,7 +229,6 @@ const DS_MENU = [
     price: 'Rp 28.000', priceNum: 28000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.8, reviewCount: 94,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Nasi Besek', 'Ayam Bakar', 'Tradisional', 'Eco'],
   },
   {
@@ -256,10 +240,9 @@ const DS_MENU = [
     minOrder: 10, satuanOrder: 'porsi',
     img: 'img/rempah_istimewa.webp',
     gallery: ['img/rempah_istimewa.webp','img/cat_nasi_besek.webp','img/qual_pengemasan.webp'],
-    price: 'Rp 42.000', priceNum: 42000, priceOri: 'Rp 50.000', discount: '16%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 42.000', priceNum: 42000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.7, reviewCount: 31,
-    deliveryTime: '3 Jam', estimasi: 'Siap 3 jam setelah pemesanan',
     tags: ['Nasi Besek', 'Sapi', 'Premium', 'Modern'],
   },
   {
@@ -274,7 +257,6 @@ const DS_MENU = [
     price: 'Rp 35.000', priceNum: 35000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: false,
     rating: 4.6, reviewCount: 22,
-    deliveryTime: '3 Jam', estimasi: 'Siap 3 jam setelah pemesanan',
     tags: ['Nasi Besek', 'Ikan Bakar', 'Sehat'],
   },
   // KUDAPAN
@@ -284,13 +266,12 @@ const DS_MENU = [
     shortDesc: 'Snackbox Kilau + Snackbox Rona + Snackbox Sekar dalam satu paket hemat.',
     desc: 'Paket snack terlengkap untuk acara bersama! Tiga varian snack box premium dalam satu paket: Snackbox Kilau (kue kering premium), Snackbox Rona (kue basah tradisional), dan Snackbox Sekar (gorengan premium). Cocok untuk meeting, arisan, atau acara kantor.',
     isi: ['Snackbox Kilau (5 item kue kering)', 'Snackbox Rona (5 item kue basah)', 'Snackbox Sekar (5 item gorengan)', 'Tissue dan sendok'],
-    minOrder: 5, satuanOrder: 'set',
+    minOrder: 10, satuanOrder: 'set',
     img: 'img/cat_kudapan.webp',
     gallery: ['img/cat_kudapan.webp','img/testi_2.webp','img/qual_pengemasan.webp'],
-    price: 'Rp 565.000', priceNum: 565000, priceOri: 'Rp 594.736', discount: '6%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 565.000', priceNum: 565000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.7, reviewCount: 45,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Kudapan', 'Snack Box', 'Arisan', 'Meeting'],
   },
   {
@@ -299,13 +280,12 @@ const DS_MENU = [
     shortDesc: 'Aneka kue tradisional dan modern dalam box cantik bertema.',
     desc: 'Box snack cantik dengan tema yang bisa dikustomisasi sesuai acara arisan Anda. Berisi perpaduan kue tradisional Indonesia yang lezat dan kue modern yang instagramable. Cocok untuk dibagikan sebagai oleh-oleh arisan.',
     isi: ['5 item kue pilihan', 'Box cantik bertema', 'Tissue makan', 'Label nama cantik'],
-    minOrder: 20, satuanOrder: 'box',
+    minOrder: 10, satuanOrder: 'box',
     img: 'img/cat_kudapan.webp',
     gallery: ['img/cat_kudapan.webp','img/testi_3.webp','img/qual_pengemasan.webp'],
     price: 'Rp 25.000', priceNum: 25000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: true,
     rating: 4.8, reviewCount: 118,
-    deliveryTime: '3 Jam', estimasi: 'Siap 3 jam setelah pemesanan',
     tags: ['Kudapan', 'Snack Box', 'Arisan', 'Cantik'],
   },
   {
@@ -314,13 +294,12 @@ const DS_MENU = [
     shortDesc: 'Kue mini premium dengan berbagai rasa pilihan untuk oleh-oleh dan souvenir.',
     desc: 'Kue mini premium satu porsi dengan pilihan 6 rasa: Chocolate Lava, Red Velvet, Matcha, Taro, Salted Caramel, dan Vanilla Klasik. Cantik sebagai souvenir pernikahan, ulang tahun, atau oleh-oleh acara.',
     isi: ['Mini cake 1 porsi', 'Pilihan 6 rasa', 'Kemasan box cantik', 'Label rasa'],
-    minOrder: 30, satuanOrder: 'pcs',
+    minOrder: 10, satuanOrder: 'pcs',
     img: 'img/cat_kudapan.webp',
     gallery: ['img/cat_kudapan.webp','img/testi_1.webp','img/qual_pengemasan.webp'],
-    price: 'Rp 18.000', priceNum: 18000, priceOri: 'Rp 22.000', discount: '18%',
-    isNew: true, isPromo: true, isBest: false,
+    price: 'Rp 18.000', priceNum: 18000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.9, reviewCount: 67,
-    deliveryTime: '1 Hari', estimasi: 'Pesan H-1 untuk custom',
     tags: ['Kudapan', 'Kue', 'Souvenir', 'Ulang Tahun'],
   },
   // DIMSUM
@@ -333,10 +312,9 @@ const DS_MENU = [
     minOrder: 5, satuanOrder: 'box',
     img: 'img/cat_dimsum.webp',
     gallery: ['img/cat_dimsum.webp','img/testi_2.webp','img/qual_chef.webp'],
-    price: 'Rp 55.000', priceNum: 55000, priceOri: 'Rp 65.000', discount: '15%',
-    isNew: false, isPromo: true, isBest: true,
+    price: 'Rp 55.000', priceNum: 55000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: true,
     rating: 4.9, reviewCount: 203,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Dimsum', 'Premium', 'Halal', 'Kukus'],
   },
   {
@@ -351,7 +329,6 @@ const DS_MENU = [
     price: 'Rp 250.000', priceNum: 250000, priceOri: null, discount: null,
     isNew: false, isPromo: false, isBest: false,
     rating: 4.7, reviewCount: 51,
-    deliveryTime: '3 Jam', estimasi: 'Siap 3 jam setelah pemesanan',
     tags: ['Dimsum', 'Party', 'Besar', 'Buffet'],
   },
   {
@@ -364,9 +341,8 @@ const DS_MENU = [
     img: 'img/cat_dimsum.webp',
     gallery: ['img/cat_dimsum.webp','img/testi_3.webp','img/qual_chef.webp'],
     price: 'Rp 35.000', priceNum: 35000, priceOri: null, discount: null,
-    isNew: true, isPromo: false, isBest: true,
+    isNew: false, isPromo: false, isBest: true,
     rating: 4.8, reviewCount: 89,
-    deliveryTime: '2 Jam', estimasi: 'Siap 2 jam setelah pemesanan',
     tags: ['Dimsum', 'Ceker', 'Pedas', 'Favorit'],
   },
   // HAMPERS
@@ -376,13 +352,12 @@ const DS_MENU = [
     shortDesc: 'Nasi Box Bogana + Fresh Twilight untuk momen spesial yang tak terlupakan.',
     desc: 'Hampers eksklusif dengan konsep Bogana (hidangan pembuka tradisional Sunda yang mewah). Perpaduan nasi box premium dengan minuman Fresh Twilight yang menyegarkan dalam kemasan hampers cantik. Cocok untuk hadiah dan souvenir acara.',
     isi: ['Nasi Box Bogana (1 porsi premium)', 'Fresh Twilight (1 botol)', 'Kemasan hampers cantik', 'Kartu ucapan'],
-    minOrder: 10, satuanOrder: 'pcs',
+    minOrder: 1, satuanOrder: 'pcs',
     img: 'img/cat_hampers.webp',
     gallery: ['img/cat_hampers.webp','img/qual_pengemasan.webp','img/testi_1.webp'],
     price: 'Rp 185.000', priceNum: 185000, priceOri: null, discount: null,
-    isNew: true, isPromo: true, isBest: false,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.8, reviewCount: 37,
-    deliveryTime: '1 Hari', estimasi: 'Pesan H-1 untuk persiapan',
     tags: ['Hampers', 'Souvenir', 'Hadiah', 'Premium'],
   },
   {
@@ -391,13 +366,12 @@ const DS_MENU = [
     shortDesc: 'Hampers eksklusif lebaran dengan kue premium dan sirup pilihan.',
     desc: 'Rayakan Lebaran dengan hampers mewah dari Dapur Sultan. Berisi aneka kue kering premium, sirup buah pilihan, dan snack berkualitas dalam kemasan hampers eksklusif yang cantik. Tersedia pilihan ukuran S, M, dan L.',
     isi: ['Kue kering premium (5 jenis)', 'Sirup buah pilihan (2 botol)', 'Snack premium', 'Kemasan hampers eksklusif', 'Pita dan kartu ucapan'],
-    minOrder: 5, satuanOrder: 'pcs',
+    minOrder: 1, satuanOrder: 'pcs',
     img: 'img/cat_hampers.webp',
     gallery: ['img/cat_hampers.webp','img/testi_2.webp','img/qual_pengemasan.webp'],
-    price: 'Rp 350.000', priceNum: 350000, priceOri: 'Rp 420.000', discount: '17%',
-    isNew: false, isPromo: true, isBest: true,
+    price: 'Rp 350.000', priceNum: 350000, priceOri: null, discount: null,
+    isNew: false, isPromo: false, isBest: true,
     rating: 4.9, reviewCount: 134,
-    deliveryTime: '2 Hari', estimasi: 'Pesan jauh hari untuk Lebaran',
     tags: ['Hampers', 'Lebaran', 'Hadiah', 'Kue'],
   },
   {
@@ -406,13 +380,12 @@ const DS_MENU = [
     shortDesc: 'Hampers cantik untuk souvenir pernikahan dengan desain custom sesuai tema.',
     desc: 'Souvenir pernikahan yang berkesan dan berkelas. Hampers cantik yang dapat dikustomisasi 100% sesuai tema pernikahan Anda – pilihan warna, isi, hingga desain kemasan. Tim desainer kami siap membantu mewujudkan konsep impian Anda.',
     isi: ['Isi hampers custom', 'Kemasan custom desain', 'Label nama tamu', 'Pita dekorasi', 'Kartu ucapan custom'],
-    minOrder: 50, satuanOrder: 'pcs',
+    minOrder: 1, satuanOrder: 'pcs',
     img: 'img/cat_hampers.webp',
     gallery: ['img/cat_hampers.webp','img/testi_3.webp','img/qual_pengemasan.webp'],
     price: 'Rp 95.000', priceNum: 95000, priceOri: null, discount: null,
-    isNew: true, isPromo: false, isBest: false,
+    isNew: false, isPromo: false, isBest: false,
     rating: 4.7, reviewCount: 56,
-    deliveryTime: '3 Hari', estimasi: 'Konsultasi desain min. 3 hari',
     tags: ['Hampers', 'Wedding', 'Souvenir', 'Custom'],
   },
 ];
@@ -428,7 +401,6 @@ const DS_CART = {
   },
   save(cart) {
     localStorage.setItem('ds_cart', JSON.stringify(cart));
-    // Trigger global update
     this.updateBadge();
     try {
       window.dispatchEvent(new Event('cart-updated'));
@@ -438,7 +410,7 @@ const DS_CART = {
     const cart = this.get();
     const item = DS_MENU.find(m => m.id === id);
     if (!item) return;
-    const addQty = parseInt(qty) || item.minOrder || 1;
+    const addQty = Math.max(1, parseInt(qty) || item.minOrder || 1);
     const existIndex = cart.findIndex(c => c.id === id);
     
     if (existIndex > -1) {
@@ -473,7 +445,6 @@ const DS_CART = {
     return this.get().reduce((sum, c) => sum + (c.price * (c.qty || 1)), 0);
   },
   count() {
-    // Number of distinct orders in cart (1 for 1st menu added, 2 for 2nd menu added, etc.)
     return this.get().length;
   },
   totalPcs() {
@@ -486,7 +457,6 @@ const DS_CART = {
       el.textContent = n;
       if (n > 0) {
         el.style.display = 'flex';
-        // Subtle pop animation
         el.style.transform = 'scale(1.25)';
         setTimeout(() => { el.style.transform = 'scale(1)'; }, 180);
       } else {
@@ -503,10 +473,82 @@ const DS_CART = {
   }
 };
 
+// ===== UNIFIED CUSTOMER SERVICE WHATSAPP SELECTION POPUP =====
+let dsPendingWAMsg = '';
+
+function openWA(message) {
+  openCSModal(message || 'Halo Dapur Sultan, saya ingin info pemesanan katering.');
+}
+
+function openCSModal(message) {
+  dsPendingWAMsg = message || 'Halo Dapur Sultan, saya ingin info pemesanan katering.';
+  let modal = document.getElementById('ds-cs-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'ds-cs-modal';
+    modal.className = 'ds-cs-modal-overlay';
+    modal.innerHTML = `
+      <div class="ds-cs-modal-card">
+        <div class="ds-cs-modal-header">
+          <div class="ds-cs-modal-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.58 1.961.948 2.791.948 3.181 0 5.767-2.586 5.767-5.766.001-3.18-2.585-5.766-5.767-5.766zm10.007 5.868c-.001 5.518-4.489 10.007-10.008 10.007-1.748 0-3.414-.457-4.887-1.258l-5.643 1.478 1.503-5.502c-.88-1.524-1.373-3.27-1.373-5.078.001-5.518 4.489-10.007 10.008-10.007 5.518 0 10.007 4.489 10.007 10.007z"/></svg>
+          </div>
+          <div class="ds-cs-modal-titles">
+            <h3>Hubungi Customer Service</h3>
+            <p>Pilih nomor CS kami untuk respon cepat & ramah:</p>
+          </div>
+          <button class="ds-cs-modal-close" onclick="closeCSModal()" aria-label="Tutup">&times;</button>
+        </div>
+        <div class="ds-cs-modal-body">
+          <button type="button" class="ds-cs-item" onclick="sendWACSTo('6281380033670')">
+            <div class="ds-cs-item-avatar">CS 1</div>
+            <div class="ds-cs-item-info">
+              <div class="ds-cs-item-name">CS 1 - Dapur Sultan <span class="ds-cs-badge">Fast Response</span></div>
+              <div class="ds-cs-item-phone">0813-8003-3670</div>
+            </div>
+            <div class="ds-cs-item-arrow">&#8594;</div>
+          </button>
+          <button type="button" class="ds-cs-item" onclick="sendWACSTo('6282112882600')">
+            <div class="ds-cs-item-avatar">CS 2</div>
+            <div class="ds-cs-item-info">
+              <div class="ds-cs-item-name">CS 2 - Dapur Sultan <span class="ds-cs-badge">Siap Melayani</span></div>
+              <div class="ds-cs-item-phone">0821-1288-2600</div>
+            </div>
+            <div class="ds-cs-item-arrow">&#8594;</div>
+          </button>
+        </div>
+        <div class="ds-cs-modal-footer">
+          <span>🕒 Buka setiap hari 10.00 - 23.00 WIB</span>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeCSModal();
+    });
+  }
+  modal.classList.add('show');
+}
+
+function closeCSModal() {
+  const modal = document.getElementById('ds-cs-modal');
+  if (modal) modal.classList.remove('show');
+}
+
+function sendWACSTo(waNum) {
+  closeCSModal();
+  const text = encodeURIComponent(dsPendingWAMsg || 'Halo Dapur Sultan, saya ingin info pemesanan katering.');
+  window.open(`https://wa.me/${waNum}?text=${text}`, '_blank');
+}
+
 // Global Listeners for instant Cart Badge synchronization
 if (typeof window !== 'undefined') {
   window.DS_MENU = DS_MENU;
   window.DS_CART = DS_CART;
+  window.openWA = openWA;
+  window.openCSModal = openCSModal;
+  window.closeCSModal = closeCSModal;
+  window.sendWACSTo = sendWACSTo;
   window.addEventListener('storage', () => DS_CART.updateBadge());
   window.addEventListener('cart-updated', () => DS_CART.updateBadge());
   document.addEventListener('DOMContentLoaded', () => DS_CART.updateBadge());

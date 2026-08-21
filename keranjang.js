@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== RENDER CART =====
 function renderCart() {
-  const cart = DS_CART.get();
+  const cart = (typeof DS_CART !== 'undefined') ? DS_CART.get() : [];
   const wrap = document.getElementById('cart-items-wrap');
   const empty = document.getElementById('cart-empty');
   const formCard = document.getElementById('cart-form-card');
@@ -15,26 +15,28 @@ function renderCart() {
   const trustBadges = document.getElementById('cart-trust-badges');
   const bottomBar = document.getElementById('cart-bottom-bar');
 
+  if (!wrap || !empty) return;
+
   if (!cart || cart.length === 0) {
     wrap.innerHTML = '';
     empty.style.display = 'block';
-    formCard.style.display = 'none';
-    summaryCard.style.display = 'none';
-    trustBadges.style.display = 'none';
-    bottomBar.style.display = 'none';
+    if (formCard) formCard.style.display = 'none';
+    if (summaryCard) summaryCard.style.display = 'none';
+    if (trustBadges) trustBadges.style.display = 'none';
+    if (bottomBar) bottomBar.style.display = 'none';
     return;
   }
 
   empty.style.display = 'none';
-  formCard.style.display = 'block';
-  summaryCard.style.display = 'block';
-  trustBadges.style.display = 'flex';
-  bottomBar.style.display = 'flex';
+  if (formCard) formCard.style.display = 'block';
+  if (summaryCard) summaryCard.style.display = 'block';
+  if (trustBadges) trustBadges.style.display = 'flex';
+  if (bottomBar) bottomBar.style.display = 'flex';
 
   wrap.innerHTML = cart.map(item => {
-    const product = DS_MENU.find(m => m.id === item.id) || {};
-    const minOrder = product.minOrder || 1;
-    const subtotal = item.price * item.qty;
+    const product = (typeof DS_MENU !== 'undefined' ? DS_MENU : []).find(m => m.id === item.id) || {};
+    const subtotal = (item.price || 0) * (item.qty || 1);
+    const satuan = item.satuanOrder || product.satuanOrder || 'porsi';
 
     return `
       <div class="cart-item-card" id="cart-item-${item.id}">
@@ -49,7 +51,7 @@ function renderCart() {
                 </svg>
               </button>
             </div>
-            <span class="cart-item-price-unit">Rp ${item.price.toLocaleString('id-ID')} / ${product.satuanOrder || 'porsi'}</span>
+            <span class="cart-item-price-unit">Rp ${(item.price || 0).toLocaleString('id-ID')} / ${satuan}</span>
           </div>
           
           <div class="cart-item-foot">
@@ -58,7 +60,7 @@ function renderCart() {
               <button class="cart-qty-btn" onclick="updateItemQty(${item.id}, -1)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
-              <span class="cart-qty-num">${item.qty}</span>
+              <span class="cart-qty-num">${item.qty || 1}</span>
               <button class="cart-qty-btn" onclick="updateItemQty(${item.id}, 1)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
@@ -74,16 +76,17 @@ function renderCart() {
 
 // ===== UPDATE QTY =====
 function updateItemQty(id, delta) {
+  if (typeof DS_CART === 'undefined') return;
   const cart = DS_CART.get();
   const item = cart.find(c => c.id === id);
   if (!item) return;
 
-  const product = DS_MENU.find(m => m.id === id) || {};
-  const minOrder = product.minOrder || 1;
+  const product = (typeof DS_MENU !== 'undefined' ? DS_MENU : []).find(m => m.id === id) || {};
+  const minOrder = product.minOrder || item.minOrder || 10;
 
-  const newQty = item.qty + delta;
+  const newQty = (item.qty || minOrder) + delta;
   if (newQty < minOrder) {
-    if (confirm(`Minimal pemesanan untuk ${item.name} adalah ${minOrder} ${product.satuanOrder || 'porsi'}. Hapus item ini dari keranjang?`)) {
+    if (confirm(`Minimal pemesanan untuk ${item.name} adalah ${minOrder} ${product.satuanOrder || item.satuanOrder || 'porsi'}. Hapus item ini dari keranjang?`)) {
       removeItem(id);
     }
     return;
@@ -95,6 +98,7 @@ function updateItemQty(id, delta) {
 
 // ===== REMOVE ITEM =====
 function removeItem(id) {
+  if (typeof DS_CART === 'undefined') return;
   DS_CART.remove(id);
   showToast('Menu dihapus dari keranjang');
   renderCart();
@@ -103,7 +107,7 @@ function removeItem(id) {
 // ===== CLEAR ALL =====
 function clearAllCart() {
   if (confirm('Kosongkan semua pesanan di keranjang?')) {
-    DS_CART.clear();
+    if (typeof DS_CART !== 'undefined') DS_CART.clear();
     showToast('Keranjang telah dikosongkan');
     renderCart();
   }
@@ -111,41 +115,56 @@ function clearAllCart() {
 
 // ===== UPDATE SUMMARY =====
 function updateSummary() {
+  if (typeof DS_CART === 'undefined') return;
   const cart = DS_CART.get();
   const total = DS_CART.total();
-  const count = DS_CART.count();
 
-  document.getElementById('sum-item-count').textContent = cart.length;
-  document.getElementById('sum-subtotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
-  document.getElementById('sum-total').textContent = 'Rp ' + total.toLocaleString('id-ID');
-  document.getElementById('bar-total-price').textContent = 'Rp ' + total.toLocaleString('id-ID');
+  const countEl = document.getElementById('sum-item-count');
+  if (countEl) countEl.textContent = cart.length;
+
+  const subtotalEl = document.getElementById('sum-subtotal');
+  if (subtotalEl) subtotalEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+  const totalEl = document.getElementById('sum-total');
+  if (totalEl) totalEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+  const barTotalEl = document.getElementById('bar-total-price');
+  if (barTotalEl) barTotalEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
 }
 
 // ===== CHECKOUT WA =====
 function checkoutWA() {
+  if (typeof DS_CART === 'undefined') return;
   const cart = DS_CART.get();
   if (!cart || cart.length === 0) {
     alert('Keranjang Anda masih kosong.');
     return;
   }
 
-  const name = document.getElementById('cust-name').value.trim();
-  const date = document.getElementById('cust-date').value.trim();
-  const address = document.getElementById('cust-address').value.trim();
-  const note = document.getElementById('cust-note').value.trim();
+  const nameEl = document.getElementById('cust-name');
+  const dateEl = document.getElementById('cust-date');
+  const addressEl = document.getElementById('cust-address');
+  const noteEl = document.getElementById('cust-note');
+
+  const name = nameEl ? nameEl.value.trim() : '';
+  const date = dateEl ? dateEl.value.trim() : '';
+  const address = addressEl ? addressEl.value.trim() : '';
+  const note = noteEl ? noteEl.value.trim() : '';
 
   if (!name || !date || !address) {
     alert('Mohon lengkapi Nama, Tanggal Acara, dan Alamat Pengiriman terlebih dahulu.');
-    if (!name) document.getElementById('cust-name').focus();
-    else if (!date) document.getElementById('cust-date').focus();
-    else if (!address) document.getElementById('cust-address').focus();
+    if (!name && nameEl) nameEl.focus();
+    else if (!date && dateEl) dateEl.focus();
+    else if (!address && addressEl) addressEl.focus();
     return;
   }
 
+  const menuList = typeof DS_MENU !== 'undefined' ? DS_MENU : [];
   let itemsText = cart.map((item, idx) => {
-    const product = DS_MENU.find(m => m.id === item.id) || {};
-    const subtotal = item.price * item.qty;
-    return `${idx + 1}. *${item.name}*\n   • Jumlah: ${item.qty} ${product.satuanOrder || 'porsi'}\n   • Subtotal: Rp ${subtotal.toLocaleString('id-ID')}`;
+    const product = menuList.find(m => m.id === item.id) || {};
+    const subtotal = (item.price || 0) * (item.qty || 1);
+    const satuan = item.satuanOrder || product.satuanOrder || 'porsi';
+    return `${idx + 1}. *${item.name}*\n   • Jumlah: ${item.qty} ${satuan}\n   • Subtotal: Rp ${subtotal.toLocaleString('id-ID')}`;
   }).join('\n\n');
 
   const grandTotal = DS_CART.total();
@@ -163,7 +182,11 @@ function checkoutWA() {
     (note ? `• Catatan: ${note}\n` : '') +
     `\nMohon konfirmasi ketersediaan slot dan rincian ongkir. Terima kasih! 🙏`;
 
-  window.open(`https://wa.me/6281380033670?text=${encodeURIComponent(message)}`, '_blank');
+  if (typeof openCSModal === 'function') {
+    openCSModal(message);
+  } else {
+    window.open(`https://wa.me/6281380033670?text=${encodeURIComponent(message)}`, '_blank');
+  }
 }
 
 // ===== TOAST =====
@@ -173,4 +196,15 @@ function showToast(msg) {
   toast.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// Global exposure
+if (typeof window !== 'undefined') {
+  window.renderCart = renderCart;
+  window.updateItemQty = updateItemQty;
+  window.removeItem = removeItem;
+  window.clearAllCart = clearAllCart;
+  window.updateSummary = updateSummary;
+  window.checkoutWA = checkoutWA;
+  window.showToast = showToast;
 }

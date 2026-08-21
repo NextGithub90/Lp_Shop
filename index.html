@@ -16,7 +16,7 @@
 
 <body>
   <div class="announcement-bar" id="ann-bar">
-    Promo Akhir Bulan! Pesan min. 30 pax gratis minuman. Hubungi CS sekarang!
+    Dapur Sultan, hari biasa pun bisa terasa istimewa
     <button class="ann-close" onclick="document.getElementById('ann-bar').style.display='none'"
       aria-label="Tutup">X</button>
   </div>
@@ -27,52 +27,67 @@
       </div>
       <div class="hero-food-strip" id="hero-food-strip">
         <div class="food-strip-track" id="food-strip-track">
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=1'" role="button" tabindex="0" title="Detail Nasi Box Ayam Goreng">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=1'" role="button" tabindex="0"
+            title="Detail Nasi Box Ayam Goreng">
             <div class="food-img food-img-real" style="background-image:url('img/ayam_Goreng.webp')"></div>
             <span class="food-label">Ayam Goreng</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=2'" role="button" tabindex="0" title="Detail Ayam Bakar Rempah">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=2'" role="button" tabindex="0"
+            title="Detail Ayam Bakar Rempah">
             <div class="food-img food-img-real" style="background-image:url('img/ayamBakar_rempah.webp')"></div>
             <span class="food-label">Ayam Bakar</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0" title="Detail Ayam Goreng Lengkuas">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0"
+            title="Detail Ayam Goreng Lengkuas">
             <div class="food-img food-img-real" style="background-image:url('img/ayamGoreng_lengkuas.webp')"></div>
             <span class="food-label">Lengkuas</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=6'" role="button" tabindex="0" title="Detail Sultan Penyet">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=6'" role="button" tabindex="0"
+            title="Detail Sultan Penyet">
             <div class="food-img food-img-real" style="background-image:url('img/sultan_penyet.webp')"></div>
             <span class="food-label">Sultan Penyet</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0" title="Detail Ayam Geprek">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0"
+            title="Detail Ayam Geprek">
             <div class="food-img food-img-real" style="background-image:url('img/ayam_Keprek.webp')"></div>
             <span class="food-label">Ayam Geprek</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0" title="Detail Geprek Istimewa">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=3'" role="button" tabindex="0"
+            title="Detail Geprek Istimewa">
             <div class="food-img food-img-real" style="background-image:url('img/keprek_istimewa.webp')"></div>
             <span class="food-label">Geprek Spesial</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=5'" role="button" tabindex="0" title="Detail Rempah Istimewa">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=5'" role="button" tabindex="0"
+            title="Detail Rempah Istimewa">
             <div class="food-img food-img-real" style="background-image:url('img/rempah_istimewa.webp')"></div>
             <span class="food-label">Rempah Juara</span>
           </div>
-          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0" title="Detail Sultan Lengkuas">
+          <div class="food-card" onclick="window.location.href='detail-produk.html?id=4'" role="button" tabindex="0"
+            title="Detail Sultan Lengkuas">
             <div class="food-img food-img-real" style="background-image:url('img/sultan_lengkuas.webp')"></div>
             <span class="food-label">Sultan Lengkuas</span>
           </div>
         </div>
       </div>
       <div class="hero-cta">
-        <h1 class="hero-title">Hidangan Lezat<br />untuk Setiap Momen</h1>
+        <div class="hero-welcome-badge">👑 Selamat Datang Para Sultan</div>
+        <h1 class="hero-title">Buka Halaman Ini,<br /><span class="hero-title-rempah">Biarkan Aroma Rempah
+            Memanggilmu</span></h1>
+        <p class="hero-poetic">Dari hidangan yang menggugah selera,<br />hingga hidangan yang memanjakan lidah.</p>
         <p class="hero-sub">Katering premium untuk arisan, syukuran, ulang tahun, meeting kantor &amp; acara spesial
           lainnya.</p>
-        <div class="hero-search-wrap">
+        <div class="hero-search-wrap" id="hero-search-wrap">
           <div class="search-label">&#128269; Cari menu yang kamu inginkan</div>
-          <input type="text" class="hero-search" id="hero-search"
-            placeholder="Ketik nama menu, jenis hidangan, atau acara..." />
+          <div class="hero-search-input-wrap">
+            <input type="text" class="hero-search" id="hero-search"
+              placeholder="Ketik nama menu, jenis hidangan, atau acara..." autocomplete="off" />
+            <button type="button" class="hero-search-clear" id="hero-search-clear" aria-label="Hapus pencarian"
+              style="display:none">&times;</button>
+          </div>
+          <div class="hero-search-dropdown" id="hero-search-dropdown" style="display:none"></div>
         </div>
         <p class="hero-cta-text">Mau lihat semua menu?</p>
-        <a href="daftar-menu.html"
-          class="btn-primary" id="btn-lihat-menu">Lihat Daftar Menu</a>
+        <a href="daftar-menu.html" class="btn-primary" id="btn-lihat-menu">Lihat Daftar Menu</a>
       </div>
     </header>
 
@@ -80,64 +95,36 @@
     <section class="kategori-section" id="kategori-section">
       <div class="section-header-light">
         <h2 class="section-title-dark">Menu Andalan Kami</h2>
-        <p class="section-sub">Beragam pilihan hidangan untuk setiap momen spesialmu</p>
+        <p class="section-sub">Beragam pilihan varian hidangan lezat untuk setiap momen spesialmu</p>
       </div>
       <div class="kategori-grid">
-        <a href="daftar-menu.html?cat=nasi-box" class="kat-item">
+        <a href="detail-produk.html?id=4" class="kat-item">
           <div class="kat-img-wrap">
-            <img src="img/cat_nasi_box.webp" alt="Kategori Nasi Box" class="kat-img" loading="lazy" />
+            <img src="img/ayamGoreng_lengkuas.webp" alt="Nasi Box Ayam Lengkuas" class="kat-img" loading="lazy" />
           </div>
-          <span class="kat-name">Nasi Box</span>
-          <span class="kat-count">20 Pilihan</span>
+          <span class="kat-name">Nasi Box Ayam Lengkuas</span>
+          <span class="kat-count">Menu Juara</span>
         </a>
-        <a href="daftar-menu.html?cat=hantaran" class="kat-item">
+        <a href="detail-produk.html?id=2" class="kat-item">
           <div class="kat-img-wrap">
-            <img src="img/cat_hantaran.webp" alt="Kategori Hantaran" class="kat-img" loading="lazy" />
+            <img src="img/ayamBakar_rempah.webp" alt="Nasi Box Ayam Bakar" class="kat-img" loading="lazy" />
           </div>
-          <span class="kat-name">Hantaran</span>
-          <span class="kat-count">9 Pilihan</span>
+          <span class="kat-name">Nasi Box Ayam Bakar</span>
+          <span class="kat-count">Bumbu Rempah</span>
         </a>
-        <a href="daftar-menu.html?cat=paket-luxury" class="kat-item">
+        <a href="detail-produk.html?id=3" class="kat-item">
           <div class="kat-img-wrap">
-            <img src="img/cat_paket_luxury.webp" alt="Kategori Paket Luxury" class="kat-img" loading="lazy" />
+            <img src="img/ayam_Keprek.webp" alt="Nasi Box Ayam Keprek" class="kat-img" loading="lazy" />
           </div>
-          <span class="kat-name">Paket Luxury</span>
-          <span class="kat-count">6 Pilihan</span>
+          <span class="kat-name">Nasi Box Ayam Keprek</span>
+          <span class="kat-count">Pedas Gurih</span>
         </a>
-        <a href="daftar-menu.html?cat=tumpeng-mini" class="kat-item">
+        <a href="detail-produk.html?id=6" class="kat-item">
           <div class="kat-img-wrap">
-            <img src="img/cat_tumpeng_mini.webp" alt="Kategori Tumpeng Mini" class="kat-img" loading="lazy" />
+            <img src="img/sultan_penyet.webp" alt="Nasi Box Ayam Penyet" class="kat-img" loading="lazy" />
           </div>
-          <span class="kat-name">Tumpeng Mini</span>
-          <span class="kat-count">5 Pilihan</span>
-        </a>
-        <a href="daftar-menu.html?cat=nasi-besek" class="kat-item">
-          <div class="kat-img-wrap">
-            <img src="img/cat_nasi_besek.webp" alt="Kategori Nasi Besek" class="kat-img" loading="lazy" />
-          </div>
-          <span class="kat-name">Nasi Besek</span>
-          <span class="kat-count">8 Pilihan</span>
-        </a>
-        <a href="daftar-menu.html?cat=kudapan" class="kat-item">
-          <div class="kat-img-wrap">
-            <img src="img/cat_kudapan.webp" alt="Kategori Kudapan" class="kat-img" loading="lazy" />
-          </div>
-          <span class="kat-name">Kudapan</span>
-          <span class="kat-count">12 Pilihan</span>
-        </a>
-        <a href="daftar-menu.html?cat=dimsum" class="kat-item">
-          <div class="kat-img-wrap">
-            <img src="img/cat_dimsum.webp" alt="Kategori Dimsum" class="kat-img" loading="lazy" />
-          </div>
-          <span class="kat-name">Dimsum</span>
-          <span class="kat-count">10 Pilihan</span>
-        </a>
-        <a href="daftar-menu.html?cat=hampers" class="kat-item">
-          <div class="kat-img-wrap">
-            <img src="img/cat_hampers.webp" alt="Kategori Hampers" class="kat-img" loading="lazy" />
-          </div>
-          <span class="kat-name">Hampers</span>
-          <span class="kat-count">15 Pilihan</span>
+          <span class="kat-name">Nasi Box Ayam Penyet</span>
+          <span class="kat-count">Sambal Mantap</span>
         </a>
       </div>
     </section>
@@ -151,10 +138,11 @@
         <div class="menu-card">
           <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=1'">
             <img src="img/ayam_Goreng.webp" alt="Nasi Box Sultan Premium" loading="lazy" />
-            <span class="menu-card-badge">â˜… Terlaris</span>
+            <span class="menu-card-badge">&#9733; Terlaris</span>
           </div>
           <div class="menu-card-info">
-            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=1'">Nasi Box Sultan Premium</h3>
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=1'">Nasi Box Sultan Premium
+            </h3>
             <p class="menu-card-desc">Ayam goreng crispy rempah + tempe orek + lalapan + sambal.</p>
             <div class="menu-card-price-row">
               <span class="menu-card-price">Rp 35.000</span>
@@ -163,7 +151,9 @@
             <div class="menu-card-actions">
               <button class="btn-card-keranjang" onclick="addHomeCart(1, 10, 'Nasi Box Sultan Premium')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 Keranjang
               </button>
@@ -178,10 +168,10 @@
         <div class="menu-card">
           <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=2'">
             <img src="img/ayamBakar_rempah.webp" alt="Nasi Box Ayam Bakar Rempah" loading="lazy" />
-            <span class="menu-card-badge">Hemat 16%</span>
           </div>
           <div class="menu-card-info">
-            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=2'">Nasi Box Ayam Bakar Rempah</h3>
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=2'">Nasi Box Ayam Bakar
+              Rempah</h3>
             <p class="menu-card-desc">Ayam bakar bumbu 12 rempah pilihan + nasi pulen + sambal hijau.</p>
             <div class="menu-card-price-row">
               <span class="menu-card-price">Rp 38.000</span>
@@ -190,7 +180,9 @@
             <div class="menu-card-actions">
               <button class="btn-card-keranjang" onclick="addHomeCart(2, 10, 'Nasi Box Ayam Bakar Rempah')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 Keranjang
               </button>
@@ -205,10 +197,10 @@
         <div class="menu-card">
           <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=4'">
             <img src="img/ayamGoreng_lengkuas.webp" alt="Nasi Box Lengkuas Juara" loading="lazy" />
-            <span class="menu-card-badge">Hemat 12%</span>
           </div>
           <div class="menu-card-info">
-            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=4'">Nasi Box Lengkuas Juara</h3>
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=4'">Nasi Box Lengkuas Juara
+            </h3>
             <p class="menu-card-desc">Ayam goreng taburan lengkuas gurih renyah dengan sambal spesial.</p>
             <div class="menu-card-price-row">
               <span class="menu-card-price">Rp 37.000</span>
@@ -217,7 +209,9 @@
             <div class="menu-card-actions">
               <button class="btn-card-keranjang" onclick="addHomeCart(4, 10, 'Nasi Box Lengkuas Juara')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 Keranjang
               </button>
@@ -232,10 +226,11 @@
         <div class="menu-card">
           <div class="menu-card-img-wrap" onclick="window.location.href='detail-produk.html?id=6'">
             <img src="img/sultan_penyet.webp" alt="Nasi Box Sultan Penyet" loading="lazy" />
-            <span class="menu-card-badge">Hemat 14%</span>
+            <span class="menu-card-badge">&#9733; Terlaris</span>
           </div>
           <div class="menu-card-info">
-            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=6'">Nasi Box Sultan Penyet</h3>
+            <h3 class="menu-card-name" onclick="window.location.href='detail-produk.html?id=6'">Nasi Box Sultan Penyet
+            </h3>
             <p class="menu-card-desc">Ayam penyet dengan sambal bawang super pedas khas Sultan komplit.</p>
             <div class="menu-card-price-row">
               <span class="menu-card-price">Rp 36.000</span>
@@ -244,7 +239,9 @@
             <div class="menu-card-actions">
               <button class="btn-card-keranjang" onclick="addHomeCart(6, 10, 'Nasi Box Sultan Penyet')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 Keranjang
               </button>
@@ -256,8 +253,7 @@
         </div>
       </div>
       <div class="menu-ayam-cta">
-        <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20lihat%20menu%20lengkap"
-          class="btn-secondary" target="_blank" rel="noopener">&#128203; Lihat Semua Menu</a>
+        <a href="daftar-menu.html" class="btn-secondary">&#128203; Lihat Semua Menu</a>
       </div>
     </section>
     <section class="kualitas-section" id="kualitas-section">
@@ -330,9 +326,9 @@
             </svg>
           </div>
           <div class="stat-number-wrap">
-            <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-num" data-target="5000">0</span><span class="stat-plus">+</span>
           </div>
-          <div class="stat-unit">Porsi / Bulan</div>
+          <div class="stat-unit">Box / Bulan</div>
           <div class="stat-label">Tersajikan segar tepat waktu</div>
         </div>
         <div class="stat-card">
@@ -344,7 +340,7 @@
             </svg>
           </div>
           <div class="stat-number-wrap">
-            <span class="stat-num" data-target="4.9">0</span><span class="stat-plus">/5.0</span>
+            <span class="stat-num" data-target="5.0">0</span><span class="stat-plus">/5.0</span>
           </div>
           <div class="stat-unit">Rating Kepuasan</div>
           <div class="stat-label">Berdasarkan ulasan pelanggan</div>
@@ -358,9 +354,9 @@
             </svg>
           </div>
           <div class="stat-number-wrap">
-            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-num" data-target="5">0</span><span class="stat-plus"> Tahun+</span>
           </div>
-          <div class="stat-unit">Tahun Pengalaman</div>
+          <div class="stat-unit">Pengalaman</div>
           <div class="stat-label">Melayani berbagai acara</div>
         </div>
         <div class="stat-card">
@@ -372,7 +368,7 @@
             </svg>
           </div>
           <div class="stat-number-wrap">
-            <span class="stat-num" data-target="200">0</span><span class="stat-plus">+</span>
+            <span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span>
           </div>
           <div class="stat-unit">Acara Sukses</div>
           <div class="stat-label">Arisan, kantor &amp; syukuran</div>
@@ -431,8 +427,8 @@
         <p class="section-sub-light">For reservation or inquiries, please contact us</p>
       </div>
       <div class="contact-cards">
-        <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20info%20katering"
-          class="contact-card" id="contact-wa" target="_blank" rel="noopener">
+        <a href="javascript:void(0)" onclick="openCSModal('Halo Dapur Sultan, saya ingin konsultasi pemesanan katering.')"
+          class="contact-card" id="contact-wa">
           <div class="contact-card-icon wa-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
               <path
@@ -441,7 +437,7 @@
           </div>
           <div class="contact-card-info">
             <span class="contact-card-label">WhatsApp CS</span>
-            <span class="contact-card-num">0813-8003-367</span>
+            <span class="contact-card-num">CS 1 &amp; CS 2</span>
             <span class="contact-card-status"><span class="status-dot"></span> Online Sekarang</span>
           </div>
           <span class="contact-card-arrow">&#8250;</span>
@@ -467,9 +463,15 @@
           rel="noopener">
           <div class="contact-card-icon tiktok-icon">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#FE2C55" transform="translate(0.6, 0.6)"/>
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#25F4EE" transform="translate(-0.6, -0.6)"/>
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z" fill="#FFFFFF"/>
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z"
+                fill="#FE2C55" transform="translate(0.6, 0.6)" />
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z"
+                fill="#25F4EE" transform="translate(-0.6, -0.6)" />
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.77 1.81-.03 3.32-1.52 3.36-3.33.05-4.45.02-8.9.03-13.35.01-1.74-.01-3.48.01-5.22z"
+                fill="#FFFFFF" />
             </svg>
           </div>
           <div class="contact-card-info">
@@ -526,7 +528,7 @@
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
-          <span>Buka setiap hari 07.00 - 21.00 WIB</span>
+          <span>Buka setiap hari 10.00 - 23.00 WIB</span>
         </div>
         <div class="contact-info-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -567,9 +569,11 @@
           <div class="faq-a" id="faq-ans-2" hidden>
             <p>Pilih menu yang kamu inginkan, tentukan jumlah pesanan dan tanggal acara, lalu hubungi Customer Service
               Dapur Sultan melalui nomor WhatsApp resmi kami:</p>
-            <div class="faq-wa-links"><a href="https://wa.me/6281380033670" class="faq-wa-btn" target="_blank">WhatsApp
-                CS:
-                0813-8003-367</a></div>
+            <div class="faq-wa-links">
+              <a href="javascript:void(0)" onclick="openCSModal('Halo Dapur Sultan, saya ingin konsultasi pemesanan katering.')" class="faq-wa-btn">
+                WhatsApp CS 1 &amp; CS 2
+              </a>
+            </div>
           </div>
         </div>
         <div class="faq-item" id="faq-3"><button class="faq-q" onclick="toggleFaq(3)"><span>Apakah ada minimal pemesanan
@@ -662,8 +666,8 @@
     </nav>
   </div>
 
-  <a href="https://wa.me/6281380033670?text=Halo%20Dapur%20Sultan%2C%20saya%20ingin%20bertanya" class="float-wa"
-    id="float-wa" target="_blank" rel="noopener">
+  <a href="javascript:void(0)" onclick="openCSModal('Halo Dapur Sultan, saya ingin bertanya tentang menu katering.')" class="float-wa"
+    id="float-wa">
     <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -681,7 +685,7 @@
     function addHomeCart(id, qty, name) {
       if (window.DS_CART) {
         DS_CART.add(id, qty);
-        showHomeToast('âœ“ ' + name + ' ditambahkan ke keranjang');
+        showHomeToast('✓ ' + name + ' ditambahkan ke keranjang');
       }
     }
     function showHomeToast(msg) {
