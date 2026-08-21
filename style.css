@@ -83,12 +83,13 @@ body::before {
 .page-wrapper {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 480px;
   margin: 0 auto;
   background: #FEFAF3;
   box-shadow: 0 0 60px rgba(74, 21, 0, 0.25);
   min-height: 100vh;
-  padding-bottom: 80px;
+  padding-bottom: max(80px, calc(65px + env(safe-area-inset-bottom, 0px)));
 }
 
 /* ===== HEADER / HERO ===== */
